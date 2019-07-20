@@ -12,7 +12,8 @@
 
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&display=swap&subset=cyrillic"	rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&display=swap&subset=cyrillic"
+		rel="stylesheet">
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.css">
 	<link rel="stylesheet" href="css/styles.min.css">
@@ -20,6 +21,24 @@
 </head>
 
 <body>
+		<div id="nav-icon2">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+	<div class="mobile-menu">
+
+		<ul class="nav__list">
+			<li class="nav__list-item"><a href="#" class="nav__list-link">Главная</a></li>
+			<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
+			<li class="nav__list-item"><a href="#" class="nav__list-link">Галерея</a></li>
+			<li class="nav__list-item"><a href="#" class="nav__list-link">Пректная документация</a></li>
+		</ul>
+	</div>
+
 	<div class="container front">
 		<div class="front__img-wrapper" style="background-image: url(img/_src/1.jpg)">
 
@@ -27,10 +46,9 @@
 
 		<div class="front__right">
 			<header class="header">
-				<div class="logo-wrapper">
-					<img class="logo-img" src="img/_src/nika_logo.png" alt="" srcset="">
-				</div>
+
 				<nav class="header-nav">
+
 					<ul class="nav__list">
 						<li class="nav__list-item"><a href="#" class="nav__list-link">Главная</a></li>
 						<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
@@ -38,6 +56,15 @@
 						<li class="nav__list-item"><a href="#" class="nav__list-link">Пректная документация</a></li>
 					</ul>
 				</nav>
+				<div class="header-wrapper">
+					<div class="logo-wrapper">
+						<img class="logo-img" src="img/_src/nika_logo.png" alt="" srcset="">
+					</div>
+					<div class="info__deals-item">
+						<button class="info__deals-btn btn">Оставить заявку</button>
+						<button class="info__deals-btn btn">Получить презентацию</button>
+					</div>
+				</div>
 			</header>
 			<div class="front__info">
 				<div class="info__deals">
@@ -45,14 +72,7 @@
 						<span class="info__deals-title">Телефон</span>
 						<span class="info__deals-text">+7 495 777-7785</span>
 					</div>
-					<div class="info__deals-item">
-						<span class="info__deals-title">Цена от</span>
-						<span class="info__deals-text">15 000 000 руб.</span>
-					</div>
-					<div class="info__deals-item">
-						<button class="info__deals-btn btn">Оставить заявку</button>
-						<button class="info__deals-btn btn">Получить презентацию</button>
-					</div>
+
 				</div>
 				<img src="img/_src/images.jpg" alt="" class="logo">
 			</div>
@@ -117,7 +137,7 @@
 			</div>
 		</div>
 		<div class="appartments__slider owl-carousel slider owl-theme">
-			<div class="slide-item">
+			<div class="slide-item double">
 				<div class="slide__left">
 					<div class="slide__desc">
 						<div class="slide__dsc-line">
@@ -227,6 +247,56 @@
 			</div>
 		</div>
 	</div>
+	<div class="container mockup">
+		<div class="inner-container left-right-container">
+			<div class="mocup__left">
+				<h2 class="mocup-title">Вы можете получить презентацию</h2>
+			</div>
+			<div class="mockup__right">
+				<img src="img/_src/ордынка-min.png" alt="" class="mockup-img">
+			</div>
+		</div>
+	</div>
+	<div class="building">
+		<div class="inner-container">
+			<h2 class="building__title">Стадия строительства</h2>
+		</div>
+	</div>
+	<div class="container contact">
+		<div class="inner-container left-right-container">
+			<div class=contact__left">
+				<h2 class="mocup-title">Напишите нам</h2>
+			</div>
+			<div class="contact__right">
+				<div class="form">
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="inner-container footer-container">
+			<div class="footer-menu-wrapper">
+				<h4 class="footer-menu__title">Основное</h4>
+				<nav class="footer__nav nav">
+					<ul class="footer__nav-list">
+						<li class="nav__list-item"><a class="nav__list-link" href="">Главная</a></li>
+						<li class="nav__list-item"><a class="nav__list-link" href="">О доме</a></li>
+						<li class="nav__list-item"><a class="nav__list-link" href="">Галерея</a></li>
+						<li class="nav__list-item"><a class="nav__list-link" href="">Пректная документация</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="footer-menu-wrapper">
+				<h4 class="footer-menu__title">Для клиентов</h4>
+
+				<ul class="footer__btn-list">
+					<button class="btn footer__nav-btn">Получить презентацию</button>
+					<button class="btn footer__nav-btn">Оставить заявку</button>
+				</ul>
+
+			</div>
+		</div>
+	</footer>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGqGPqhWtYRrVVRIzifWzarARNb46aXc&libraries=places">
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

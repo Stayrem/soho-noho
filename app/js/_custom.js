@@ -3,16 +3,26 @@ document.addEventListener("DOMContentLoaded", function() {
 	initItemMap();
     setAppartmentSlider();
     setSliderBtns();
+    openMobileMenu();
 });
+
+function openMobileMenu(){
+    $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+        $(this).toggleClass('open');
+        $('.mobile-menu').toggleClass('mobile-menu--open');
+    });
+    
+}
 
 function setAppartmentSlider(){
     var owl = $('.owl-carousel').owlCarousel({
-        loop:true,
+        loop:false,
         margin:10,
         nav:true,
         autoWidth: true,
         center: true,
         nav: false,
+        loop: true,
         responsive:{
             0:{
                 items:1
@@ -25,7 +35,7 @@ function setAppartmentSlider(){
             }
         },
     })
-    owl.on('changed.owl.carousel', function(e) {
+    owl.on('translated.owl.carousel', function(e) {
         setSliderBtns();
     });
 }
@@ -46,15 +56,16 @@ function setSliderBtns(){
     $('.appartments__filter-item').removeClass('active');
     var $slideActive = $('.appartments__slider .owl-item.active.center .slide-item');
     if($slideActive.hasClass('double')){
-        $('.appartments__filter-item:nth-child(1)').addClass('active');  
+        $('.appartments__filter-item:nth-child(1)').addClass('active');
     }else if($slideActive.hasClass('tripple')){
-        $('.appartments__filter-item:nth-child(2)').addClass('active');  
+        $('.appartments__filter-item:nth-child(2)').addClass('active');
     }else if($slideActive.hasClass('quadro')){
-        $('.appartments__filter-item:nth-child(3)').addClass('active');  
+        $('.appartments__filter-item:nth-child(3)').addClass('active');
+        console.log('quadro');
     }else if($slideActive.hasClass('penthaus')){
-        $('.appartments__filter-item:nth-child(3)').addClass('active');  
+        $('.appartments__filter-item:nth-child(4)').addClass('active');
+  
     }
-    
 }
 
 function initItemMap() {
