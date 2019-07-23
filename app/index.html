@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/owl.theme.default.css">
 	<link rel="stylesheet" href="css/lightgallery.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="css/bootstrap-formhelpers.min.css">
 	<link rel="stylesheet" href="css/styles.min.css">
 
 </head>
@@ -35,9 +36,10 @@
 	<div class="mobile-menu">
 
 		<ul class="nav__list">
-			<li class="nav__list-item"><a href="https://www.ya.ru" class="nav__list-link">Главная</a></li>
+			<li class="nav__list-item"><a href="index.html" class="nav__list-link">Главная</a></li>
 			<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
 			<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея</a></li>
+			<li class="nav__list-item"><a href="banks.html" class="nav__list-link">Как купить?</a></li>
 			<li class="nav__list-item"><a href="#" class="nav__list-link">Пректная документация</a></li>
 		</ul>
 	</div>
@@ -57,9 +59,9 @@
 				<nav class="header-nav">
 
 					<ul class="nav__list">
-						<li class="nav__list-item"><a href="#" class="nav__list-link">Главная</a></li>
+						<li class="nav__list-item"><a href="index.html" class="nav__list-link">Главная</a></li>
 						<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
-						<li class="nav__list-item"><a href="#" class="nav__list-link">Галерея</a></li>
+						<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея</a></li>
 						<li class="nav__list-item"><a href="banks.html" class="nav__list-link">Как купить?</a></li>
 						<li class="nav__list-item"><a href="#" class="nav__list-link">Пректная документация</a></li>
 					</ul>
@@ -80,8 +82,8 @@
 						<span class="info__deals-text">от 15 000 000 руб.</span>
 					</div>
 					<div class="info__deals-item">
-						<button class="info__deals-btn btn">Оставить заявку</button>
-						<button class="info__deals-btn btn">Получить презентацию</button>
+						<button class="info__deals-btn btn show-btn">Оставить заявку</button>
+						<button class="info__deals-btn btn pdf-btn">Получить презентацию</button>
 					</div>
 
 				</div>
@@ -160,7 +162,7 @@
 							<div class="slide__desc-item">от 44м</div>
 						</div>
 					</div>
-					<button class="slide__btn btn">Оставить заявку</button>
+					<button class="slide__btn btn show-btn">Оставить заявку</button>
 				</div>
 				<div class="slide__right">
 					<img src="img/_src/5c5c14ad230c1.jpg" alt="" srcset="">
@@ -178,7 +180,7 @@
 							<div class="slide__desc-item">от 44м</div>
 						</div>
 					</div>
-					<button class="slide__btn btn">Оставить заявку</button>
+					<button class="slide__btn btn show-btn">Оставить заявку</button>
 				</div>
 				<div class="slide__right">
 					<img src="img/_src/5c5c14ad230c1.jpg" alt="" srcset="">
@@ -196,7 +198,7 @@
 							<div class="slide__desc-item">от 44м</div>
 						</div>
 					</div>
-					<button class="slide__btn btn">Оставить заявку</button>
+					<button class="slide__btn btn show-btn">Оставить заявку</button>
 				</div>
 				<div class="slide__right">
 					<img src="img/_src/5c5c14ad230c1.jpg" alt="" srcset="">
@@ -214,7 +216,7 @@
 							<div class="slide__desc-item">от 44м</div>
 						</div>
 					</div>
-					<button class="slide__btn btn">Оставить заявку</button>
+					<button class="slide__btn btn show-btn">Оставить заявку</button>
 				</div>
 				<div class="slide__right">
 					<img src="img/_src/5c5c14ad230c1.jpg" alt="" srcset="">
@@ -232,7 +234,7 @@
 							<div class="slide__desc-item">от 44м</div>
 						</div>
 					</div>
-					<button class="slide__btn btn">Оставить заявку</button>
+					<button class="slide__btn btn show-btn">Оставить заявку</button>
 				</div>
 				<div class="slide__right">
 					<img src="img/_src/5c5c14ad230c1.jpg" alt="" srcset="">
@@ -250,7 +252,7 @@
 							<div class="slide__desc-item">от 44м</div>
 						</div>
 					</div>
-					<button class="slide__btn btn">Оставить заявку</button>
+					<button class="slide__btn btn show-btn">Оставить заявку</button>
 				</div>
 				<div class="slide__right">
 					<img src="img/_src/5c5c14ad230c1.jpg" alt="" srcset="">
@@ -264,7 +266,7 @@
 				<h2 class="mocup-title" data-aos="fade-up">Вы можете получить презентацию</h2>
 			</div>
 			<div class="mockup__right">
-				<img src="img/_src/ордынка-min.png" alt="" class="mockup-img" >
+				<img src="img/_src/ордынка-min.png" alt="" class="mockup-img pdf-btn" >
 			</div>
 		</div>
 	</div>
@@ -279,14 +281,18 @@
 				<h2 class="mocup-title" data-aos="fade-up">Напишите нам</h2>
 			</div>
 			<div class="contact__right">
-				<div class="form">
-					<input type="text">
-					<input type="text">
-					<input type="text">
+				<form class="form">
+					<div class="input-wrapper">
+						<input name="name" type="text" placeholder="Ваше имя">
+					</div>
+					<div class="input-wrapper">
+						<input name="tel" type="tel" placeholder="Ваш телефон" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd">
+						<input name="email" type="text" placeholder="Ваша почта">
+					</div>
 					<input type="checkbox" name="present" id="pdf">
 					<label for="pdf">Получить презентацию</label>
-					<input type="submit">
-				</div>
+					<button type="submit">Отправить</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -307,16 +313,15 @@
 				<h4 class="footer-menu__title">Для клиентов</h4>
 
 				<ul class="footer__btn-list">
-					<button class="btn footer__nav-btn">Получить презентацию</button>
-					<button class="btn footer__nav-btn">Оставить заявку</button>
+					<button class="btn footer__nav-btn pdf-btn">Получить презентацию</button>
+					<button class="btn footer__nav-btn show-btn">Оставить заявку</button>
 				</ul>
 
 			</div>
 		</div>
 	</footer>
 </div>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGqGPqhWtYRrVVRIzifWzarARNb46aXc&libraries=places">
-	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGqGPqhWtYRrVVRIzifWzarARNb46aXc&libraries=places"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
@@ -324,6 +329,9 @@
 	<script src="js/jquery.scrollify.js"></script>
 	<script src="js/lightgallery.min.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+	<script src="js/bootstrap-formhelpers.min.js"></script>
+	<script src="js/jquery.maskedinput.js"></script>
 	<script src="js/_custom.js"></script>
 	<script>    onePageScrollInit();</script>
 

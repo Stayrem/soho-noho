@@ -7,7 +7,99 @@ document.addEventListener("DOMContentLoaded", function() {
     masonryGalleryMaker();
     scrollAmimationInit();
     appsFilterBtnEvent();
+    formValidator();
+    changerValidateMessage();
+    setPhoneMask();
+    moveToForm();
 });
+
+function moveToForm(){
+    $('.pdf-btn').on('click', function(){
+        $("#pdf").prop('checked', true);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(".contact").offset().top
+        }, 1500);
+        
+
+    });
+    $('show-btn').on('click', function(){
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(".show-btn").offset().top
+        }, 1500);
+        $("#pdf").prop('checked', false);
+
+    });
+}
+
+
+function setPhoneMask(){
+    $(function(){
+       $(".bfh-phone").mask("+7(999) 999-99-99");
+   });
+   document.querySelector('.bfh-phone').addEventListener('focus', function(){
+       moveCaretToStart(this)
+   })
+}
+
+// проверено в IE
+function moveCaretToStart(inputObject)
+{
+ if (inputObject.createTextRange)
+ {
+  var r = inputObject.createTextRange();
+  r.collapse(true);
+  r.select();
+ }
+}
+
+function moveCaretToEnd(inputObject)
+{
+ if (inputObject.createTextRange)
+ {
+  var r = inputObject.createTextRange();
+  r.collapse(false);
+  r.select();
+ }
+}
+
+// проверено в FireFox
+
+function moveCaretToStart(inputObject)
+{
+ if (inputObject.selectionStart)
+ {
+  inputObject.setSelectionRange(0,0);
+  inputObject.focus();
+ }
+}
+function moveCaretToEnd(inputObject)
+{
+ if (inputObject.selectionStart)
+ {
+  var end = inputObject.value.length;
+  inputObject.setSelectionRange(end,end);
+  inputObject.focus();
+ }
+}
+
+function formValidator(){
+    $(".form").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 3
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            tel: {
+                required: true,
+                minlength: 10
+            }
+        }
+    });
+}
 
 function scrollAmimationInit(){
     AOS.init({
@@ -506,3 +598,25 @@ function initItemMap() {
     }
 }
 
+function changerValidateMessage(){
+
+    jQuery.extend(jQuery.validator.messages, {
+        required: "Это поле обязательно для ввода",
+        remote: "Please fix this field.",
+        email: "Неправильный email адрес",
+        url: "Please enter a valid URL.",
+        date: "Please enter a valid date.",
+        dateISO: "Please enter a valid date (ISO).",
+        number: "Неправильный формат",
+        digits: "Please enter only digits.",
+        creditcard: "Please enter a valid credit card number.",
+        equalTo: "Please enter the same value again.",
+        accept: "Please enter a value with a valid extension.",
+        maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+        minlength: jQuery.validator.format("Вы ввели меньше {0} символов."),
+        rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+        range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+        max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+        min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+    });
+}

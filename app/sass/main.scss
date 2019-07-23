@@ -184,19 +184,22 @@ body {
 .contact__right{
 	height: 100%;
 	width: 50%;
+	display: flex;
 }
 
 .contact__right .form{
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	align-self: center;
 }
 
 .contact__left{
 	width: 50%;
+	display: flex;
 }
 
 .contact__right .form input{
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	max-width: 200px;
 	height: 30px;
 	border:none;
@@ -205,7 +208,47 @@ body {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 	box-shadow: none;
-	background: #e7b69b;
+	border-bottom: 1px solid rgba(231, 182, 155, 0.5);
+	padding: 0 15px;
+	color: #fff;
+	&:focus{
+		outline: none;
+		
+		border-bottom: 1px solid rgba(231, 182, 155, 1);
+	}
+}
+
+.input-wrapper{
+	position: relative;
+}
+
+#email-error{
+	left: 52%;
+}
+
+input[name=name]{
+	min-width: 100%;
+}
+
+input[name=email],input[name=tel]{
+	min-width: 48%;
+}
+
+input[name=email]{
+	margin-left: auto;
+}
+
+label.error{
+	position: absolute;
+    margin-top: 34px;
+    font-size: 11px;
+    color: red;
+    margin-left: 15px;
+}
+
+.wrapper{
+	overflow: hidden;
+	background: $dark;
 }
 
 #pdf{
@@ -217,11 +260,13 @@ body {
 	font-weight: 300;
 	font-size: 13px;
 	position: relative;
+	width: 100%;
+	margin-bottom: 15px;
 	&:before{
 		content: '';
 		display: block;
 		position: absolute;
-		background-color: $light;
+		border: 1px solid #e7b69b;
 		width: 15px;
 		height: 15px;
 		left: 0;
@@ -240,8 +285,19 @@ body {
 		background-repeat: no-repeat;	
 }
 
+.input-wrapper{
+	width: 100%;
+	display: flex;
+}
 
-.contact__right .form input:last-child{
+.contact__right .form button[type=submit]{
+	display: flex;
+    align-items: center;
+    height: 32px;
+    margin-bottom: 0px;
+	padding-left: 50px;
+    padding-right: 50px;
+    margin: 0 auto;
 	background: $dark;
 	border: 2px solid $light;
 	color: $light;
@@ -372,6 +428,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 70vh;
+	background-color: #fff;
 }
 
 .appartments__slider {
@@ -485,15 +542,20 @@ body {
 .mocup-title {
 	font-size: 30px;
 	padding-right: 30px;
+	margin: auto 0;
+}
+
+.mockup__right{
+	margin: auto 0;
 }
 
 .building {
-	height: 60vh;
+	height: 50vh;
 	background: $dark;
 }
 
 .contact {
-	height: 70vh;
+	height: 50vh;
 	background-color: $dark;
 }
 
@@ -972,6 +1034,28 @@ a{
 	
 }
 @media (max-width: 768px) {
+	#email-error{
+		left: 0;
+    	bottom: 0;
+	}
+	.contact__right{
+		width: 100%;
+		justify-content: center;
+	}
+
+	.contact{
+		height: 70vh;
+	}
+
+	.input-wrapper{
+		flex-direction: column;
+	}
+
+	input[name=email], input[name=tel]{
+		min-width: 100%;
+		margin-left: unset;
+	}
+
 	.banks__table{
 		flex-direction: row;
 		flex-wrap: wrap;
