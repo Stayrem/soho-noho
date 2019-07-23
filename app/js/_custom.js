@@ -11,7 +11,42 @@ document.addEventListener("DOMContentLoaded", function() {
     changerValidateMessage();
     setPhoneMask();
     moveToForm();
+    galleryFilterInit();
 });
+
+function galleryFilterInit(){
+    $('.gallery__list-link').on('click', function(){
+        var galleryFilterBtn = this.getAttribute('rel');
+        if(galleryFilterBtn === 'group1'){
+            $('.group2,.group3').animate({
+            opacity: 0,
+        }, 300, function() {
+            $('.group2,.group3').css({'display':'none'});
+            $('.group1').css({'display':'block','opacity':'1'});
+            $('.grid-gallery').masonry();
+        });
+        }else if(galleryFilterBtn === 'group2'){
+            $('.group1,.group3').animate({
+                opacity: 0,
+            }, 300, function() {
+                $('.group1,.group3').css({'display':'none'});
+                $('.group2').css({'display':'block','opacity':'1'});
+                $('.grid-gallery').masonry();
+            });
+        }else if(galleryFilterBtn === 'group3'){
+            $('.group2,.group1').animate({
+                opacity: 0,
+            }, 300, function() {
+                $('.group2,.group1').css({'display':'none'});
+                $('.group3').css({'display':'block','opacity':'1'});
+                $('.grid-gallery').masonry();
+            });
+        }else{
+            $('.group1,.group3,.group2').css({'display':'block','opacity':'1'});    
+            $('.grid-gallery').masonry();
+        }
+    });
+}
 
 function moveToForm(){
     $('.pdf-btn').on('click', function(){

@@ -912,6 +912,11 @@ label.error{
 .gallery__list-link{
 	color: $light;
 	margin-right: 15px;
+	padding: 0;
+	border: none;
+	font: inherit;
+	background-color: transparent;
+
 }
 
 

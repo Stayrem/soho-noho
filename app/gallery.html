@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width">
 
 	<link rel="icon" href="img/favicon.png">
-	<meta property="og:image" content="img/@1x/preview.jpg">
+	<meta property="og:image" content="img/@2x/preview.jpg">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&display=swap&subset=cyrillic"
 		rel="stylesheet">
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -45,17 +45,17 @@
 	</div>
 
 	<div class="container front container--front ">
-		<div class="front__img-wrapper" style="background-image: url(img/@1x/1.jpg)">
-			<img src="img/@1x/images.jpg" alt="" class="logo soho-logo">
+		<div class="front__img-wrapper" style="background-image: url(img/@2x/1.jpg)">
+			<img src="img/@2x/images.jpg" alt="" class="logo soho-logo">
 		</div>
 
 		<div class="front__right">
 			<header class="header">
 				<div class="logo-wrapper">
-					<img class="logo-img" src="img/@1x/nika_logo.png" alt="" srcset="">
+					<img class="logo-img" src="img/@2x/nika_logo.png" alt="" srcset="">
 					
 				</div>
-				<img src="img/@1x/images.jpg" alt="" class="logo soho-logo soho-logo--tablet">
+				<img src="img/@2x/images.jpg" alt="" class="logo soho-logo soho-logo--tablet">
 				<nav class="header-nav">
 
 					<ul class="nav__list">
@@ -96,47 +96,67 @@
 		<div class="gallery__nav-block">
 			<nav class="gallery__nav">
 				<ul class="gallery__list">
-					<li class="gallery__list-item"><a href="" class="gallery__list-link">Виды</a></li>
-					<li class="gallery__list-item"><a href="" class="gallery__list-link">Интерьеры</a></li>
-					<li class="gallery__list-item"><a href="" class="gallery__list-link">Фасады</a></li>
+					<li class="gallery__list-item"><button rel="all" class="gallery__list-link">Все</button></li>
+					<li class="gallery__list-item"><button rel="group1" class="gallery__list-link">Виды</button></li>
+					<li class="gallery__list-item"><button rel="group2" class="gallery__list-link">Интерьеры</button></li>
+					<li class="gallery__list-item"><button rel="group3" class="gallery__list-link">Фасады</button></li>
 				</ul>
 			</nav>
 		</div>
 		
 			<div class="grid-gallery">
 				<div class="grid-sizer"></div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group1">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group1">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group2">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group1">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group2">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group1">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group2">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group3">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
 				</div>
-				<div class="grid-gallery-item">
+				<div class="grid-gallery-item group2">
 				  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
 				</div>
 			  </div>
-		
 	</main>
 
-
+	<div class="container contact page-scroll--half">
+		<div class="inner-container left-right-container">
+			<div class="contact__left">
+				<h2 class="mocup-title" data-aos="fade-up">Напишите нам</h2>
+			</div>
+			<div class="contact__right">
+				<form class="form">
+					<div class="input-wrapper">
+						<input name="name" type="text" placeholder="Ваше имя">
+					</div>
+					<div class="input-wrapper">
+						<input name="tel" type="tel" placeholder="Ваш телефон" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd">
+						<input name="email" type="text" placeholder="Ваша почта">
+					</div>
+					<input type="checkbox" name="present" id="pdf">
+					<label for="pdf">Получить презентацию</label>
+					<button type="submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
 	<footer class="footer ">
 		<div class="inner-container footer-container">
 			<div class="footer-menu-wrapper">
@@ -160,27 +180,6 @@
 
 			</div>
 		</div>
-		<div class="container contact page-scroll--half">
-				<div class="inner-container left-right-container">
-					<div class="contact__left">
-						<h2 class="mocup-title" data-aos="fade-up">Напишите нам</h2>
-					</div>
-					<div class="contact__right">
-						<form class="form">
-							<div class="input-wrapper">
-								<input name="name" type="text" placeholder="Ваше имя">
-							</div>
-							<div class="input-wrapper">
-								<input name="tel" type="tel" placeholder="Ваш телефон" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd">
-								<input name="email" type="text" placeholder="Ваша почта">
-							</div>
-							<input type="checkbox" name="present" id="pdf">
-							<label for="pdf">Получить презентацию</label>
-							<button type="submit">Отправить</button>
-						</form>
-					</div>
-				</div>
-			</div>
 	</footer>
 </div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGqGPqhWtYRrVVRIzifWzarARNb46aXc&libraries=places">
@@ -196,7 +195,7 @@
 	<script src="js/bootstrap-formhelpers.min.js"></script>
 	<script src="js/jquery.maskedinput.js"></script>
 
-	<script src="js/scripts.min.js"></script>
+	<script src="js/_custom.js"></script>
 
 
 
