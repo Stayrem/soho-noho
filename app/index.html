@@ -16,11 +16,14 @@
 		rel="stylesheet">
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.css">
+	<link rel="stylesheet" href="css/lightgallery.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="css/styles.min.css">
 
 </head>
 
 <body>
+	<div class="wrapper">
 		<div id="nav-icon2">
 				<span></span>
 				<span></span>
@@ -34,37 +37,37 @@
 		<ul class="nav__list">
 			<li class="nav__list-item"><a href="https://www.ya.ru" class="nav__list-link">Главная</a></li>
 			<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
-			<li class="nav__list-item"><a href="#" class="nav__list-link">Галерея</a></li>
+			<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея</a></li>
 			<li class="nav__list-item"><a href="#" class="nav__list-link">Пректная документация</a></li>
 		</ul>
 	</div>
 
-	<div class="container front">
+	<div class="container front container--front page-scroll">
 		<div class="front__img-wrapper" style="background-image: url(img/_src/1.jpg)">
-
+			<img src="img/_src/images.jpg" alt="" class="logo soho-logo">
 		</div>
 
 		<div class="front__right">
 			<header class="header">
-
+				<div class="logo-wrapper">
+					<img class="logo-img" src="img/_src/nika_logo.png" alt="" srcset="">
+					
+				</div>
+				<img src="img/_src/images.jpg" alt="" class="logo soho-logo soho-logo--tablet">
 				<nav class="header-nav">
 
 					<ul class="nav__list">
 						<li class="nav__list-item"><a href="#" class="nav__list-link">Главная</a></li>
 						<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
 						<li class="nav__list-item"><a href="#" class="nav__list-link">Галерея</a></li>
+						<li class="nav__list-item"><a href="banks.html" class="nav__list-link">Как купить?</a></li>
 						<li class="nav__list-item"><a href="#" class="nav__list-link">Пректная документация</a></li>
 					</ul>
 				</nav>
-				<div class="header-wrapper">
-					<div class="logo-wrapper">
-						<img class="logo-img" src="img/_src/nika_logo.png" alt="" srcset="">
-					</div>
-					<div class="info__deals-item">
-						<button class="info__deals-btn btn">Оставить заявку</button>
-						<button class="info__deals-btn btn">Получить презентацию</button>
-					</div>
-				</div>
+				
+
+					
+				
 			</header>
 			<div class="front__info">
 				<div class="info__deals">
@@ -72,16 +75,24 @@
 						<span class="info__deals-title">Телефон</span>
 						<span class="info__deals-text">+7 495 777-7785</span>
 					</div>
+					<div class="info__deals-item">
+						<span class="info__deals-title">Цена</span>
+						<span class="info__deals-text">от 15 000 000 руб.</span>
+					</div>
+					<div class="info__deals-item">
+						<button class="info__deals-btn btn">Оставить заявку</button>
+						<button class="info__deals-btn btn">Получить презентацию</button>
+					</div>
 
 				</div>
-				<img src="img/_src/images.jpg" alt="" class="logo">
+				
 			</div>
 			<div class="front__map"></div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container page-scroll--half">
 		<div class="grid">
-			<div class="grid-item" style="background-image: url(img/_src/1.jpg)"></div>
+			<div class="grid-item" style="background-image: url(img/_src/1.jpg)" data-aos="fade-right"></div>
 			<div class="grid-item grid-item-text">
 				<span class="grid-title">Новый формат жизни</span>
 				<span class="grid-text">Жить, путешествовать, посещать модные мероприятия,
@@ -89,24 +100,16 @@
 					отдыхать и даже работать – всё это возможно здесь.</span>
 
 			</div>
-			<div class="grid-item" style="background-image: url(img/_src/test.jpg)"></div>
-			<div class="grid-item" style="background-image: url(img/_src/test.jpg)"></div>
-			<div class="grid-item grid-item-text grid-item-text--adv ">
+			<div class="grid-item" style="background-image: url(img/_src/test.jpg)" data-aos="fade-left"></div>
+			<div class="grid-item" style="background-image: url(img/_src/test.jpg)" ></div>
+			<div class="grid-item grid-item-text grid-item-text--adv " data-aos="fade-left">
 				<span class="grid-title">420 км.м</span>
 				<span class="grid-text">Спорта<br>
 					и<br>
 					Красоты<br></span>
 
 			</div>
-			<div class="grid-item grid-item-text grid-item-text--adv ">
-				<span class="grid-title">420 км.м</span>
-				<span class="grid-text">Спорта<br>
-					и<br>
-					Красоты<br></span>
-
-			</div>
-			<div class="grid-item" style="background-image: url(img/_src/test.jpg)"></div>
-			<div class="grid-item grid-item-text grid-item-text--adv ">
+			<div class="grid-item grid-item-text grid-item-text--adv " data-aos="fade-right">
 				<span class="grid-title">420 км.м</span>
 				<span class="grid-text">Спорта<br>
 					и<br>
@@ -114,21 +117,29 @@
 
 			</div>
 			<div class="grid-item" style="background-image: url(img/_src/test.jpg)"></div>
-			<div class="grid-item" style="background-image: url(img/_src/1.jpg);"></div>
+			<div class="grid-item grid-item-text grid-item-text--adv " data-aos="fade-left">
+				<span class="grid-title">420 км.м</span>
+				<span class="grid-text">Спорта<br>
+					и<br>
+					Красоты<br></span>
+
+			</div>
+			<div class="grid-item" style="background-image: url(img/_src/test.jpg)" data-aos="fade-right"></div>
+			<div class="grid-item" style="background-image: url(img/_src/1.jpg);" data-aos="fade-right"></div>
 		</div>
 	</div>
-	<div class="container location">
+	<div class="container location  page-scroll--half">
 		<div class="inner-container">
-			<h2 class="location__title">Расположение</h2>
-			<p class="inner__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet
+			<h2 class="location__title" data-aos="fade-right">Расположение</h2>
+			<p class="inner__text" data-aos="fade-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet
 				consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum
 				dolor sit amet consectetur adipisicing elit.</p>
 		</div>
 		<div class="map"></div>
 	</div>
-	<div class="container appartament">
+	<div class="container appartament  page-scroll--half">
 		<div class="inner-container">
-			<h2 class="appartment__title">Выбор апартаментов</h2>
+			<h2 class="appartment__title" data-aos="fade-up">Выбор апартаментов</h2>
 			<div class="appartments__filter">
 				<button class="appartments__filter-item" data-filter-slider='double'>Двухкомнатные от 44м</button>
 				<button class="appartments__filter-item" data-filter-slider='tripple'>Трёхкомнатные от 82м</button>
@@ -142,7 +153,7 @@
 					<div class="slide__desc">
 						<div class="slide__dsc-line">
 							<div class="slide__desc-item">Цена</div>
-							<div class="slide__desc-item"> от 11 562 100 руб.</div>
+							<div class="slide__desc-item"> от 10 000 100 руб.</div>
 						</div>
 						<div class="slide__dsc-line">
 							<div class="slide__desc-item">метраж</div>
@@ -247,40 +258,46 @@
 			</div>
 		</div>
 	</div>
-	<div class="container mockup">
+	<div class="container mockup  page-scroll--half">
 		<div class="inner-container left-right-container">
 			<div class="mocup__left">
-				<h2 class="mocup-title">Вы можете получить презентацию</h2>
+				<h2 class="mocup-title" data-aos="fade-up">Вы можете получить презентацию</h2>
 			</div>
 			<div class="mockup__right">
-				<img src="img/_src/ордынка-min.png" alt="" class="mockup-img">
+				<img src="img/_src/ордынка-min.png" alt="" class="mockup-img" >
 			</div>
 		</div>
 	</div>
-	<div class="building">
+	<div class="building page-scroll--half">
 		<div class="inner-container">
-			<h2 class="building__title">Стадия строительства</h2>
+			<h2 class="building__title" data-aos="fade-up">Стадия строительства</h2>
 		</div>
 	</div>
-	<div class="container contact">
+	<div class="container contact page-scroll--half">
 		<div class="inner-container left-right-container">
-			<div class=contact__left">
-				<h2 class="mocup-title">Напишите нам</h2>
+			<div class="contact__left">
+				<h2 class="mocup-title" data-aos="fade-up">Напишите нам</h2>
 			</div>
 			<div class="contact__right">
 				<div class="form">
+					<input type="text">
+					<input type="text">
+					<input type="text">
+					<input type="checkbox" name="present" id="pdf">
+					<label for="pdf">Получить презентацию</label>
+					<input type="submit">
 				</div>
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
+	<footer class="footer page-scroll--half">
 		<div class="inner-container footer-container">
 			<div class="footer-menu-wrapper">
 				<h4 class="footer-menu__title">Основное</h4>
 				<nav class="footer__nav nav">
 					<ul class="footer__nav-list">
 						<li class="nav__list-item"><a class="nav__list-link" href="">Главная</a></li>
-						<li class="nav__list-item"><a class="nav__list-link" href="">О доме</a></li>
+						<li class="nav__list-item"><a class="nav__list-link" href="">Что такое soho?</a></li>
 						<li class="nav__list-item"><a class="nav__list-link" href="">Галерея</a></li>
 						<li class="nav__list-item"><a class="nav__list-link" href="">Пректная документация</a></li>
 					</ul>
@@ -297,12 +314,18 @@
 			</div>
 		</div>
 	</footer>
+</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGqGPqhWtYRrVVRIzifWzarARNb46aXc&libraries=places">
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.scrollify.js"></script>
+	<script src="js/lightgallery.min.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script src="js/_custom.js"></script>
+	<script>    onePageScrollInit();</script>
 
 
 </body>
