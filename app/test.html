@@ -1,0 +1,939 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link href="https://use.typekit.net/fdv4pdq.css" rel="stylesheet" />
+<style type="text/css">@font-face {
+		font-family: 'ProbaPro-Bold';
+		src: local('ProbaPro-Bold'),
+			url('https://nomail.com.ua/files/eot/e3c44c1e3b47fbb22da927c0763e425e.eot?#iefix') format('embedded-opentype'),
+			url('https://nomail.com.ua/files/woff/e3c44c1e3b47fbb22da927c0763e425e.woff') format('woff'),
+			url('https://nomail.com.ua/files/woff2/e3c44c1e3b47fbb22da927c0763e425e.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'ProbaPro-Regular';
+		src: local('ProbaPro-Regular'),
+			url('https://nomail.com.ua/files/eot/ff5a2c389414bb416122e8ee86c1f35c.eot?#iefix') format('embedded-opentype'),
+			url('https://nomail.com.ua/files/woff/ff5a2c389414bb416122e8ee86c1f35c.woff') format('woff'),
+			url('https://nomail.com.ua/files/woff2/ff5a2c389414bb416122e8ee86c1f35c.woff2') format('woff2');
+	}
+	.pagebreak {
+		page-break-after: always;
+	}
+	@page {
+		size: A4 landscape;
+	}
+	.plan__container * {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.plan__container img {
+		width: 90%;
+	}
+	body {
+		box-sizing: border-box;
+		margin: 0;
+		font-family: 'ProbaPro-Regular' !important;
+		max-width: 1200px !important;
+		color: #444;
+		font-size: 13px !important;
+		font-weight: 300;
+		line-height: 1.5;
+	}
+	h2 {
+		color: #333;
+		font-size: 18px;
+	}
+	* {
+		box-sizing: inherit;
+	}
+	.container {
+		/* to centre page on screen*/
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	.page {
+		position: relative;
+		max-height: 100vh;
+		max-width: 100vw;
+		overflow: hidden;
+	}
+	.front-page {
+		display: flex;
+		height: 100vh;
+	}
+	.front-page {
+		width: 100%;
+	}
+	.front-page--one pastetag span img {
+		height: 100%;
+	}
+	.front-img--second {
+		width: 70%;
+	}
+	.front-description {
+		min-height: 100%;
+		width: 30%;
+		background: #fff;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 80px 50px 60px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.front-description--second {
+		position: relative;
+	}
+	.description__type {
+		margin-bottom: 0;
+	}
+	.description__info {
+		font-size: 18px;
+		margin-top: 0px;
+		font-weight: 600;
+	}
+	.info {
+		display: flex;
+		justify-content: space-between;
+		-webkit-print-color-adjust: exact;
+		align-items: flex-end;
+		width: 260px;
+		align-items: flex-end;
+		align-self: flex-end;
+	}
+	.info__logo {
+		height: 35px;
+		width: auto;
+	}
+	.info__contacts {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		color: #575757;
+	}
+	/*second*/
+	.second__gallery {
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+	.second__gallery pastetag span img {
+		height: 500px;
+		position: absolute;
+	}
+	.second-col {
+		width: 50%;
+	}
+	.second-col:first-child {
+		padding-right: 50px;
+	}
+	.second__gallery pastetag {
+		height: 33.33333%;
+		position: relative;
+	}
+	.second__description {
+		width: 70%;
+		display: flex;
+		flex-direction: column;
+		padding: 80px 50px 60px;
+		justify-content: space-between;
+	}
+	.second__description-text {
+		display: flex;
+		justify-content: space-around;
+	}
+	.second__text-item {
+		width: 100%;
+		margin-bottom: 40px;
+	}
+	/*third*/
+	.third__gallery {
+		width: 70%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.third__gallery img {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.third__description {
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 80px 50px 60px;
+	}
+	.third__gallery pastetag {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		width: 100%
+	}
+	.third__gallery pastetag span {
+		width: 50%;
+		overflow: hidden;
+		height: 50%;
+		position: relative
+	}
+	/*map*/
+	.map__render {
+		width: 70%;
+		overflow: hidden;
+		height: 100%
+	}
+	.map__render * {
+		width: 100%;
+		height: 100%;
+	}
+	.map__description {
+		width: 30%;
+		padding: 80px 50px 60px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		color: #595959;
+	}
+	.map__description-container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.map__description-container .info {
+		margin-top: auto;
+	}
+	.transport-title {
+		color: #333;
+		margin-top: 50px;
+	}
+	.district-title {
+		color: #333;
+	}
+	[displayname="Координаты"] p {
+		margin: 0;
+	}
+	.address-title {
+		margin-bottom: -15px;
+	}
+	.address-text {
+		font-size: 13px;
+	}
+	pastetag[displayname="4page-1image: align-right"],
+	[displayname="5page-1image: zoom"],
+	[displayname="5page-2image: zoom"],
+	[displayname="5page-3image: zoom"],
+	[displayname="5page-4image: zoom"],
+	[displayname="4page-1image: zoom"],
+	[displayname="4page-2image: zoom"],
+	[displayname="4page-3image: zoom"],
+	[displayname="4page-1image: align"],
+	[displayname="4page-2image: align"],
+	[displayname="4page-3image: align"],
+	[displayname="4page-1image: valign"],
+	[displayname="4page-2image: valign"],
+	[displayname="4page-3image: valign"] {
+		display: none;
+		margin: 0;
+	}
+	.hidden {
+		display: none;
+		margin: 0;
+	}
+	.plan__render {
+		width: 70%;
+		background-color: #808080;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		padding: 82px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.plan__render p pastetag span img {
+		height: 100%;
+	}
+	.plan__container p {
+		display: block;
+		width: 100% height: 100%
+	}
+	.plan__container p pastetag {
+		display: block;
+		width: 100% height: 100%
+	}
+	.plan__container p pastetag span {
+		display: block;
+		width: 100% height: 100%
+	}
+	/*.plan__render p pastetag span:before{
+    content:"";
+    display:block;
+    width: 190px;
+    height: 100%;
+    position: absolute;
+    left:0;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    top: 0;
+    z-index: 1;
+   }*/
+	.front-description-block p:nth-child(6) {
+		margin-bottom: 70px;
+	}
+	.description__info--lower {
+		font-size: 20px;
+	}
+	.id {
+		position: absolute;
+		top: 100px;
+		left: 0;
+		background-color: #fff;
+		padding: 5px 2px;
+		min-width: 100px;
+		text-align: center;
+	}
+	.plan__container {
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		outline: 2px solid #9b9b9b;
+		outline-offset: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		position: relative;
+	}
+	p:not([class]) {
+		display: none;
+	}
+	.map__render p {
+		display: block !important;
+	}
+</style>
+<pastetag class="blank-paste" code="3760" color="#3B3BC5" contenteditable="false" displayname="4page-1image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(59, 59, 197);">4page-1image: zoom</pastetag>
+<p class="hidden"><pastetag class="blank-paste" code="3789" color="#ADD8E6" contenteditable="false" displayname="5page-1image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(173, 216, 230);">5page-1image: zoom</pastetag> <pastetag class="blank-paste" code="3790" color="#AFEEEE" contenteditable="false" displayname="5page-2image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(175, 238, 238);">5page-2image: zoom</pastetag> <pastetag class="blank-paste" code="3791" color="#6B8E23" contenteditable="false" displayname="5page-3image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(107, 142, 35);">5page-3image: zoom</pastetag> <pastetag class="blank-paste" code="3792" color="#7FFFD4" contenteditable="false" displayname="5page-4image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">5page-4image: zoom</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3779" color="#7B68EE" contenteditable="false" displayname="4page-1image: valign" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(123, 104, 238);">4page-1image: valign</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3776" color="#1E90FF" contenteditable="false" displayname="4page-1image: align" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(30, 144, 255);">4page-1image: align</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3774" color="#808000" contenteditable="false" displayname="4page-2image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(128, 128, 0);">4page-2image: zoom</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3777" color="#8FBC8F" contenteditable="false" displayname="4page-2image: align" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(143, 188, 143);">4page-2image: align</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3780" color="#8B4513" contenteditable="false" displayname="4page-2image: valign" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(139, 69, 19);">4page-2image: valign</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3775" color="#6A5ACD" contenteditable="false" displayname="4page-3image: zoom" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(106, 90, 205);">4page-3image: zoom</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3781" color="#6495ED" contenteditable="false" displayname="4page-3image: valign" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(100, 149, 237);">4page-3image: valign</pastetag></p>
+<p class="hidden"><pastetag class="blank-paste" code="3778" color="#66CDAA" contenteditable="false" displayname="4page-3image: align" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(102, 205, 170);">4page-3image: align</pastetag></p>
+<div class="container">
+<div class="page pagebreak front-page front-page--one"><pastetag class="blank-paste" code="3730" color="#2E8B57" contenteditable="false" displayname="Фото ЖК" filled="false" imgorigin="imgorigin" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(46, 139, 87);">Фото ЖК</pastetag>
+<div class="id">ID:<pastetag class="blank-paste" code="3788" color="#3B3BC5" contenteditable="false" displayname="ID" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(59, 59, 197);">ID</pastetag></div>
+<div class="front-description">
+<div class="front-description-block">
+<p class="description__type">Тип</p>
+<p class="description__info"><span class="identify"><span><pastetag class="blank-paste" code="3734" color="#8B4513" contenteditable="false" displayname="Тип недвижимости" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(139, 69, 19);">Тип недвижимости</pastetag> </span></span></p>
+<p class="description__type"><span class="identify"><span>Жилой комплекс</span></span></p>
+<p class="description__info"><span class="identify"><span><pastetag class="blank-paste" code="3735" color="#1E90FF" contenteditable="false" displayname="Комплекс (привязка)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(30, 144, 255);">Комплекс (привязка)</pastetag> </span></span></p>
+<p class="description__type"><span class="identify"><span>Площадь, м<sup>2</sup></span></span></p>
+<p class="description__info"><span class="identify"><span><pastetag class="blank-paste" code="3727" color="#336699" contenteditable="false" displayname="Общая площадь (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(51, 102, 153);">Общая площадь (кв.м)</pastetag> </span></span></p>
+<p class="description__type"><span class="identify"><span>Число комнат</span></span></p>
+<p class="description__info"><span class="identify"><span><pastetag class="blank-paste" code="3728" color="#3B3BC5" contenteditable="false" displayname="Комнат в квартире" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(59, 59, 197);">Комнат в квартире</pastetag> </span></span></p>
+<p class="description__type"><span class="identify"><span>Количество спален</span></span></p>
+<p class="description__info"><span class="identify"><span><pastetag class="blank-paste" code="3747" color="#6495ED" contenteditable="false" displayname="Количество спален" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(100, 149, 237);">Количество спален</pastetag> </span></span></p>
+<p class="description__type"><span class="identify"><span>Цена в рублях</span></span></p>
+<p class="description__info"><span class="identify"><span>от&nbsp;<pastetag class="blank-paste" code="3729" color="#3CB371" contenteditable="false" displayname="Цена в рублях" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(60, 179, 113);">Цена в рублях</pastetag></span></span></p>
+</div>
+<div class="info">
+<div class="info__contacts"><span class="contacts__tel">8 (795) 320-1999</span> <span class="contacts__site">www.nikaestate.ru</span></div>
+<span class="identify"><span><img alt="" class="info__logo" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></span></span></div>
+</div>
+<span class="identify"><span> </span></span></div>
+<div class="page pagebreak front-page">
+<div class="second__gallery"><pastetag class="blank-paste" code="3755" color="#66CDAA" contenteditable="false" displayname="4page-1image: align-right" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(102, 205, 170);">4page-1image: align-right</pastetag> <pastetag class="blank-paste" code="3730" color="#336699" contenteditable="false" displayname="Фото ЖК" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(51, 102, 153);">Фото ЖК</pastetag> <pastetag class="blank-paste" code="3730" color="#336699" contenteditable="false" displayname="Фото ЖК" filled="false" imgside="original" imgtouch="2" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(51, 102, 153);">Фото ЖК</pastetag> <pastetag class="blank-paste" code="3730" color="#336699" contenteditable="false" displayname="Фото ЖК" filled="false" imgside="original" imgtouch="3" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(51, 102, 153);">Фото ЖК</pastetag></div>
+<div class="second__description">
+<div class="second__description-text">
+<div class="second-col">
+<div class="second__text-item">
+<h2 class="second__text-title">Описание</h2>
+<div class="second__cont">
+<p class="test">Среди тихих улочек района Якиманка, на ул. Полянка, находится комплекс особняков исторической и современной постройки, созданный с привлечением лучших мировых архитектурных и ландшафтных бюро. Ближайшие станции метро: Полянка, Добрынинская и Октябрьская. В 2 км от дома &ndash; Кремль.</p>
+</div>
+</div>
+<div class="second__text-item">
+<h2 class="second__text-title">Инфраструктура</h2>
+<div class="second__cont">
+<p class="test">Якиманка &ndash; один из самых хорошо сохранившихся районов Москвы. Художественные галереи соседствуют здесь со старинными храмами, а в улочках есть вся необходимая инфраструктура. В десяти минутах ходьбы находятся оба здания Третьяковской галереи: здание на Крымском валу и в Лаврушинском. В пешей доступности начинается цепочка парков: Музеон, Парк Горького, Нескучный, Воробьевы горы, &ndash; идеальное место для пробежек и долгих прогулок. В непосредственной близости располагаются специализированные школы, в том числе начальная школа Французского лицея, языковой лицей им.Островского и лицей 1799.</p>
+</div>
+</div>
+</div>
+<div class="second-col">
+<div class="second__text-item">
+<h2 class="second__text-title">Архитектура</h2>
+<div class="second__cont">
+<p class="test">Основой комплекса стали три исторических особняка, крупнейший из которых был спроектирован признанным мастером модерна Густавом Гельрихом в конце XIX века. Особняки тщательно реконструированы и перестроены в соответствии с нынешним представлением о комфорте: актуальные планировки квартир, новейшие коммуникации и лифты. В каждом особняке от 22 до 24 квартир.</p>
+<p class="test">Пять современных особняков продолжают традицию малоэтажной застройки этой части Якиманки, но в подчеркнуто современной манере: невысокие, облицованные гладким французcким камнем St. Croix Limestone, с большими панорамными окнами с переплетами под бронзу и французскими балконами со стеклянными ограждениями.</p>
+<p class="test">Дизайном лобби занималось международное архитектурное бюро Aedas, знаменитое своими роскошными и изысканными интерьерами. В каждом особняке лобби выдержано в своей манере &ndash; от более теплых пряных холлов старинных зданий до светлых изящных лобби новых зданий.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="info">
+<div class="info__contacts"><span class="contacts__tel">8 (795) 320-1999</span> <span class="contacts__site">www.nikaestate.ru</span></div>
+<img alt="" class="info__logo" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></div>
+</div>
+</div>
+<div class="page pagebreak front-page">
+<div class="third__gallery"><pastetag class="blank-paste" code="3731" color="#9932CC" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1-4" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(153, 50, 204);">Фото</pastetag></div>
+<div class="third__description">
+<div class="third__description-container">
+<h2 class="third__title">Описание</h2>
+<p class="third__text"><pastetag class="blank-paste" code="3797" color="#228B22" contenteditable="false" displayname="Общее описание" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(34, 139, 34);">Общее описание</pastetag></p>
+</div>
+<div class="info">
+<div class="info__contacts"><span class="contacts__tel">8 (795) 320-1999</span> <span class="contacts__site">www.nikaestate.ru</span></div>
+<img alt="" class="info__logo" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></div>
+</div>
+</div>
+<div class="page pagebreak front-page">
+<div class="plan__render">
+<div class="plan__container"><pastetag class="blank-paste" code="3795" color="#87CEEB" contenteditable="false" displayname="Планировки-презентации" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(135, 206, 235);">Планировки-презентации</pastetag></div>
+</div>
+<div class="front-description front-description--second ">
+<div class="front-description-block">
+<p class="description__type">Общая площадь, м<sup>2</sup></p>
+<p class="description__info"><pastetag class="blank-paste" code="3727" color="#1E90FF" contenteditable="false" displayname="Общая площадь (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(30, 144, 255);">Общая площадь (кв.м)</pastetag></p>
+<p class="description__type">Жилая площадь, м<sup>2</sup></p>
+<p class="description__info"><pastetag class="blank-paste" code="3783" color="#8B4513" contenteditable="false" displayname="Жилая площадь (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(139, 69, 19);">Жилая площадь (кв.м)</pastetag></p>
+<p class="description__type">Площадь кухни, м<sup>2</sup></p>
+<p class="description__info"><pastetag class="blank-paste" code="3784" color="#9932CC" contenteditable="false" displayname="Площадь кухни (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(153, 50, 204);">Площадь кухни (кв.м)</pastetag></p>
+<p class="description__type ">Высота потолка, м</p>
+<p class="description__info description__info--lower"><pastetag class="blank-paste" code="3785" color="#B0C4DE" contenteditable="false" displayname="Высота потолков (м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(176, 196, 222);">Высота потолков (м)</pastetag></p>
+<p class="description__type ">окна выходят</p>
+<p class="description__info description__info--lower"><pastetag class="blank-paste" code="3786" color="#B0C4DE" contenteditable="false" displayname="Куда выходят окна" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(176, 196, 222);">Куда выходят окна</pastetag></p>
+<p class="description__type ">балкон/лоджия</p>
+<p class="description__info description__info--lower"><pastetag class="blank-paste" code="3787" color="#6B8E23" contenteditable="false" displayname="Балкон/Лоджия" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(107, 142, 35);">Балкон/Лоджия</pastetag></p>
+</div>
+<div class="info">
+<div class="info__contacts"><span class="contacts__tel">8 (795) 320-1999</span> <span class="contacts__site">www.nikaestate.ru</span></div>
+<img alt="" class="info__logo" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></div>
+</div>
+</div>
+<div class="page pagebreak front-page">
+<div class="plan__render">
+<div class="plan__container"><pastetag class="blank-paste" code="3795" color="#87CEEB" contenteditable="false" displayname="Планировки-презентации" filled="false" imgside="original" imgtouch="2" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(135, 206, 235);">Планировки-презентации</pastetag></div>
+</div>
+<div class="front-description front-description--second ">
+<div class="front-description-block">
+<p class="description__type">Общая площадь, м<sup>2</sup></p>
+<p class="description__info"><pastetag class="blank-paste" code="3727" color="#1E90FF" contenteditable="false" displayname="Общая площадь (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(30, 144, 255);">Общая площадь (кв.м)</pastetag></p>
+<p class="description__type">Жилая площадь, м<sup>2</sup></p>
+<p class="description__info"><pastetag class="blank-paste" code="3783" color="#8B4513" contenteditable="false" displayname="Жилая площадь (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(139, 69, 19);">Жилая площадь (кв.м)</pastetag></p>
+<p class="description__type">Площадь кухни, м<sup>2</sup></p>
+<p class="description__info"><pastetag class="blank-paste" code="3784" color="#9932CC" contenteditable="false" displayname="Площадь кухни (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(153, 50, 204);">Площадь кухни (кв.м)</pastetag></p>
+<p class="description__type ">Высота потолка, м</p>
+<p class="description__info description__info--lower"><pastetag class="blank-paste" code="3785" color="#B0C4DE" contenteditable="false" displayname="Высота потолков (м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(176, 196, 222);">Высота потолков (м)</pastetag></p>
+<p class="description__type ">окна выходят</p>
+<p class="description__info description__info--lower"><pastetag class="blank-paste" code="3786" color="#B0C4DE" contenteditable="false" displayname="Куда выходят окна" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(176, 196, 222);">Куда выходят окна</pastetag></p>
+<p class="description__type ">балкон/лоджия</p>
+<p class="description__info description__info--lower"><pastetag class="blank-paste" code="3787" color="#6B8E23" contenteditable="false" displayname="Балкон/Лоджия" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(107, 142, 35);">Балкон/Лоджия</pastetag></p>
+</div>
+<div class="info">
+<div class="info__contacts"><span class="contacts__tel">8 (795) 320-1999</span> <span class="contacts__site">www.nikaestate.ru</span></div>
+<img alt="" class="info__logo" onload="
+var firstImgZoom = document.querySelector(`[displayname='4page-1image: zoom']`).innerText.replace(/\s/g, '');
+var secondImgZoom = document.querySelector(`[displayname='4page-2image: zoom']`).innerText.replace(/\s/g, '');
+var thirdImgZoom = document.querySelector(`[displayname='4page-3image: zoom']`).innerText.replace(/\s/g, '');
+var galleryFirstImgZoom = document.querySelector(`[displayname='5page-1image: zoom']`).innerText.replace(/\s/g, '');
+var gallerySecondImgZoom = document.querySelector(`[displayname='5page-2image: zoom']`).innerText.replace(/\s/g, '');
+var galleryThirdImgZoom = document.querySelector(`[displayname='5page-3image: zoom']`).innerText.replace(/\s/g, '');
+var galleryFourthImgZoom = document.querySelector(`[displayname='5page-4image: zoom']`).innerText.replace(/\s/g, '');
+var firstImgAlign = document.querySelector(`[displayname='4page-1image: align']`).innerText.replace(/\s/g, '');
+var secondImgAlign = document.querySelector(`[displayname='4page-2image: align']`).innerText.replace(/\s/g, '');
+var thirdImgAlign = document.querySelector(`[displayname='4page-3image: align']`).innerText.replace(/\s/g, '');
+var firstImgValign = document.querySelector(`[displayname='4page-1image: valign']`).innerText.replace(/\s/g, '');
+var secondImgValign = document.querySelector(`[displayname='4page-2image: valign']`).innerText.replace(/\s/g, '');
+var thirdImgValign = document.querySelector(`[displayname='4page-3image: valign']`).innerText.replace(/\s/g, '');
+var secondNode = document.querySelectorAll('.second__gallery pastetag span img');
+var thirdNode = document.querySelectorAll('.third__gallery pastetag span img');
+if (firstImgAlign === 'right') {
+    secondNode[0].classList.add('right');
+} else if (firstImgAlign === 'left') {
+    secondNode[0].classList.add('left');
+} else if (firstImgAlign === 'center') {
+    secondNode[0].classList.add('center');
+}
+if (secondImgAlign === 'right') {
+    secondNode[1].classList.add('right');
+} else if (secondImgAlign === 'left') {
+    secondNode[1].classList.add('left');
+} else if (secondImgAlign === 'center') {
+    secondNode[1].classList.add('center');
+}
+if (thirdImgAlign === 'right') {
+    secondNode[2].classList.add('right');
+} else if (thirdImgAlign === 'left') {
+    secondNode[2].classList.add('left');
+} else if (thirdImgAlign === 'center') {
+    secondNode[2].classList.add('center');
+}
+if (firstImgValign === 'top') {
+    secondNode[0].classList.add('top');
+} else if (firstImgValign === 'bottom') {
+    secondNode[0].classList.add('bottom');
+} else if (firstImgValign === 'center') {
+    secondNode[0].classList.add('center-v');
+}
+if (secondImgValign === 'top') {
+    secondNode[1].classList.add('top');
+} else if (secondImgValign === 'bottom') {
+    secondNode[1].classList.add('bottom');
+} else if (secondImgValign === 'center') {
+    secondNode[1].classList.add('center-v');
+}
+if (thirdImgValign === 'top') {
+    secondNode[2].classList.add('top');
+} else if (thirdImgValign === 'bottom') {
+    secondNode[2].classList.add('bottom');
+} else if (thirdImgValign === 'center') {
+    secondNode[2].classList.add('center-v');
+}
+if (firstImgZoom != null) {
+    secondNode[0].style.zoom = firstImgZoom + '%';
+}
+if (secondImgZoom != null) {
+    secondNode[1].style.zoom = secondImgZoom + '%';
+}
+if (thirdImgZoom != null) {
+    secondNode[2].style.zoom = thirdImgZoom + '%';
+}
+if (galleryFirstImgZoom != null) {
+    thirdNode[0].style.zoom = galleryFirstImgZoom + '%';
+}
+if (gallerySecondImgZoom != null) {
+    thirdNode[1].style.zoom = gallerySecondImgZoom + '%';
+}
+if (galleryFirstImgZoom != null) {
+    thirdNode[2].style.zoom = galleryThirdImgZoom + '%';
+}
+console.log('1')
+" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></div>
+</div>
+</div>
+<div class="page pagebreak front-page">
+<div class="map__render"><pastetag class="blank-paste" code="3732" color="#7CFC00" contenteditable="false" displayname="Координаты" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(124, 252, 0);">Координаты</pastetag></div>
+<div class="map__description">
+<div class="map__description-container">
+<div class="map__address">
+<p class="address-title">Адрес</p>
+<h2 class="address-text">Москва, Большой Афанасьевский пер., 28</h2>
+</div>
+<div class="map__transport">
+<h2 class="transport-title">Транспортная доступность</h2>
+<p class="transport-text">Жилой комплекс находится недалеко от главных магистралей Москвы: Садового кольца, Олимпийского проспекта, Проспекта Мира.</p>
+<p class="transport-text">Рядом 4 станции метро: &laquo;Достоевская&raquo;, &laquo;Проспект Мира&raquo;, &laquo;Новослободская&raquo; и &laquo;Сухаревская&raquo;.</p>
+</div>
+<div class="district">
+<h2 class="district-title">Район</h2>
+<p class="district-text"><pastetag class="blank-paste" code="3798" color="#B0C4DE" contenteditable="false" displayname="Район города" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(176, 196, 222);">Район города</pastetag></p>
+</div>
+<div class="info">
+<div class="info__contacts"><span class="contacts__tel">8 (795) 320-1999</span> www.nikaestate.ru</div>
+<img alt="" class="info__logo" onload="
+var coordinates = document.querySelector('.map__render').querySelector('pastetag').innerText.replace(/\s/g, '');
+document.querySelector('.map__render').querySelector('pastetag').remove();
+var firstCoordinate = coordinates.split(',')[1];
+var secondCoordinate = coordinates.split(',')[0];
+var mapLink = 'http://static.maps.2gis.com/1.0?zoom=15&amp;size=1280,1280&amp;markers=' + firstCoordinate + ',' + secondCoordinate;
+document.querySelector('.map-map').setAttribute('src', mapLink);
+var plans = document.querySelectorAll('.plan__render');
+for(var i = 0; i != plans.length; i++){
+   if(plans[i].querySelector('img') == null){
+     plans[i].closest('.page').remove();
+  }
+}
+var types = document.querySelectorAll('.description__info');
+for(var i = 0; i != types.length; i++){
+    
+   if(types[i].querySelector('pastetag').innerText === ''){
+      document.querySelectorAll('.description__type')[i].remove();
+      types[i].remove();
+     console.log('123')
+  }
+}
+" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></div>
+</div>
+</div>
+</div>
+</div>
+<p>
+<style type="text/css">p:not([class]) {
+			display: none;
+		}
+		@font-face {
+			font-family: 'ProbaPro-Bold';
+			src: local('ProbaPro-Bold'),
+				url('https://nomail.com.ua/files/eot/e3c44c1e3b47fbb22da927c0763e425e.eot?#iefix') format('embedded-opentype'),
+				url('https://nomail.com.ua/files/woff/e3c44c1e3b47fbb22da927c0763e425e.woff') format('woff'),
+				url('https://nomail.com.ua/files/woff2/e3c44c1e3b47fbb22da927c0763e425e.woff2') format('woff2');
+		}
+		@font-face {
+			font-family: 'ProbaPro-Regular';
+			src: local('ProbaPro-Regular'),
+				url('https://nomail.com.ua/files/eot/ff5a2c389414bb416122e8ee86c1f35c.eot?#iefix') format('embedded-opentype'),
+				url('https://nomail.com.ua/files/woff/ff5a2c389414bb416122e8ee86c1f35c.woff') format('woff'),
+				url('https://nomail.com.ua/files/woff2/ff5a2c389414bb416122e8ee86c1f35c.woff2') format('woff2');
+		}
+		body {
+			margin: 0;
+			font-family: 'ProbaPro-Regular' !important;
+			box-sizing: border-box;
+			font-size: 13px;
+			max-width: 1200px;
+		}
+		* {
+			box-sizing: inherit;
+		}
+		.page {
+			page-break-after: always;
+			height: 850px;
+		}
+		.masonry__gallery-item img {
+			height: 100%;
+		}
+		.page__gallery {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 100%;
+		}
+		.gallery__item {
+			width: 50%;
+			height: 50%;
+			overflow: hidden;
+		}
+		.gallery__item img {
+			width: 100%;
+			height: 100%;
+		}
+		.gallery__item-characteristic {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: flex-end;
+		}
+		.contacts {
+			display: flex;
+			align-self: flex-end;
+			padding-right: 50px;
+			padding-bottom: 60px;
+			font-size: 12px;
+			width: 310px;
+			justify-content: space-between;
+		}
+		.contacts-logo img {
+			height: 35px;
+			width: auto;
+		}
+		.title {
+			font-size: 18px;
+			font-weight: 600;
+			font-family: 'ProbaPro-Bold';
+		}
+		.characteristic__table tr:first-child {
+			width: 100px;
+		}
+		.characteristic__table tr:first-child td:first-child {
+			text-align: left;
+		}
+		.characteristic__table tr:last-child td:first-child {
+			text-align: left;
+		}
+		.characteristic__table tr {
+			padding-right: 20xp;
+		}
+		.contacts-info {
+			display: flex;
+			flex-direction: column;
+			padding-right: 30px;
+			justify-content: space-around;
+		}
+		.masonry__gallery {
+			overflow: hidden;
+			padding-top: 100px;
+			height: 70%;
+		}
+		.masonry__gallery-line {
+			display: flex;
+			background: #e6e5e5;
+		}
+		.masonry__gallery-line:first-child {
+			margin-left: -200px;
+		}
+		.masonry__gallery-line:last-child {
+			margin-left: -100px;
+		}
+		.masonry__gallery-item {
+			width: auto;
+			height: 200px;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			background-color: #e6e5e5;
+		}
+		.masonry__gallery-item--empty {
+			width: 100%;
+			background-color: #e6e5e5;
+			margin-right: 0;
+		}
+		.contacts--masonry {
+			display: flex;
+			height: 30%;
+			align-items: flex-end;
+			margin-left: auto;
+		}
+		.conclude {
+			height: 100%;
+		}
+		.conclude__header {
+			height: 75%;
+			overflow: hidden;
+			position: relative;
+		}
+		.header-text {
+			position: absolute;
+			right: 50px;
+			top: 75px;
+			background: #fff;
+			padding: 20px;
+			width: 225px;
+			border-radius: 10px;
+			font-size: 16px;
+		}
+		.conclude__header-img {
+			width: 63.35%;
+		}
+		.conclude-footer {
+			height: 25%;
+			display: flex;
+			padding-top: auto;
+		}
+.footer__text{
+  font-size: 12px;
+}
+		.footer__info {
+			padding: 0 0 50px 70px;
+			display: flex;
+			flex-direction: column;
+			width: 63.35%;
+			position: relative;
+			padding-top: 50px;
+		}
+		.footer__text {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			width: 63.35%;
+		}
+		.footer__text p {
+			margin-bottom: 0;
+			font-size: 16px;
+			width: 45%;
+		}
+		.footer__qr {
+			height: 100px;
+			width: auto;
+			margin-top: auto;
+			margin-bottom: auto;
+			margin-right: 50px;
+		}
+		.footer__contacts {
+			margin-left: auto;
+			display: flex;
+			flex-direction: column;
+		}
+		.footer__contacts-bottom-right {
+			display: flex;
+			justify-content: flex-end;
+			padding-left: 15px;
+		}
+		.footer__contacts-logo {
+			height: 35px;
+		}
+		.footer__contacts-bottom {
+			display: flex;
+			margin-top: 10px;
+          margin-left: auto;
+           width: 260px;
+           justify-content: space-between;
+		}
+		.footer__contacts-bottom-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-right: 15px;
+		}
+		.footer__title {
+			font-size: 18px;
+			line-height: 1;
+		}
+		.footer__address {
+			font-size: 12px;
+		}
+		.footer__email {
+			font-size: 12px;
+		}
+		.footer__contacts-bottom-tel {
+			font-size: 12px;
+		}
+		.footer__contacts-bottom-site {
+			font-size: 13px;
+		}
+		.conclude__header {
+			width: 100%;
+			display: flex;
+		}
+		.conclude__header-map {
+			width: 36.65%
+		}
+		.footer__right {
+			display: flex;
+			background-color: #dddee0;
+			width: 36.65%;
+			padding: 0 50px 50px 0;
+			padding-top: 50px;
+		}
+		.footer__info:after {
+			display: block;
+			content: '';
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 94px;
+			transform: translateY(-50%);
+			right: 50px;
+			background-image: url('http://qrcoder.ru/code/?BEGIN%3AVCARD%0AFN%3A%C0%E3%E5%ED%F2%F1%F2%E2%EE+%DD%EB%E8%F2%ED%EE%E9+%ED%E5%E4%E2%E8%E6%E8%EC%EE%F1%F2%E8%0AORG%3ANika+Estate%0ATEL%3A%2B7%28795%29+320-1999%0AURL%3Awww.nikaestate.ru%0AEMAIL%3Ainfo%40nikaestate.ru%0AEND%3AVCARD&4&0');
+			background-size: contain;
+		}
+		.characteristic-subtitle {
+			padding-bottom: 5px;
+			font-size: 12px;
+		}
+		.page:has(:not(img)) {
+			display: none;
+		}
+		.characteristic__table {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 90px;
+			margin-left: 100px;
+		}
+		.characteristic-line {
+			display: flex;
+			margin-bottom: 30px;
+		}
+		.characteristic-block {
+			margin-right: 100px;
+		}
+</style>
+<script>
+		console.log('123')
+	</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"></p>
+<link href="css/style.css" rel="stylesheet" />
+<div class="page">
+<div class="page__gallery">
+<div class="gallery__item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="gallery__item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="2" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="gallery__item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="3" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="gallery__item">
+<div class="gallery__item-characteristic">
+<div class="characteristic__table">
+<div class="characteristic-line">
+<div class="characteristic-block">
+<div class="characteristic-subtitle">Квартира по адресу</div>
+<div class="characteristic-title title"><pastetag class="blank-paste" code="3944" color="#BC8F8F" contenteditable="false" displayname="Улица" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(188, 143, 143);">Улица</pastetag></div>
+</div>
+</div>
+<div class="characteristic-line">
+<div class="characteristic-block">
+<div class="characteristic-subtitle">Общая площадь, м2</div>
+<div class="characteristic-title title"><pastetag class="blank-paste" code="3727" color="#A0522D" contenteditable="false" displayname="Общая площадь (кв.м)" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(160, 82, 45);">Общая площадь (кв.м)</pastetag></div>
+</div>
+<div class="characteristic-block">
+<div class="characteristic-subtitle">Количество спален</div>
+<div class="characteristic-title title"><pastetag class="blank-paste" code="3747" color="#90EE90" contenteditable="false" displayname="Количество спален" filled="false" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(144, 238, 144);">Количество спален</pastetag></div>
+</div>
+</div>
+</div>
+<div class="contacts">
+<div class="contacts-info"><span class="contacts-tel">8 (795) 320-1999</span> <span class="contacts-mail">www.nikaestate.ru</span></div>
+<div class="contacts-logo"><img alt="" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" srcset="" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="masonry__gallery">
+<div class="masonry__gallery-line">
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="2" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="3" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="4" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="12" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+</div>
+<div class="masonry__gallery-line">
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="4" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="3" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div alt="" class="masonry__gallery-item masonry__gallery-item--empty">&nbsp;</div>
+</div>
+</div>
+<div class="contacts contacts--masonry">
+<div class="contacts-info"><span class="contacts-tel">8 (795) 320-1999</span> <span class="contacts-mail">www.nikaestate.ru</span></div>
+<div class="contacts-logo"><img alt="" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" srcset="" /></div>
+</div>
+</div>
+<div class="page last-masonry">
+<div class="masonry__gallery">
+<div class="masonry__gallery-line">
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="2" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="3" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="4" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+</div>
+<div class="masonry__gallery-line">
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="1" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="2" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div class="masonry__gallery-item"><pastetag class="blank-paste" code="3731" color="#7FFFD4" contenteditable="false" displayname="Фото" filled="false" imgside="original" imgtouch="3" indexid="" style="cursor: pointer; text-align: left; margin: 0px 1px; padding: 0px; display: inline-block; color: inherit; font-weight: normal; border-bottom: 2px dashed rgb(127, 255, 212);">Фото</pastetag></div>
+<div alt="" class="masonry__gallery-item masonry__gallery-item--empty">&nbsp;</div>
+</div>
+</div>
+<div class="contacts contacts--masonry">
+<div class="contacts-info"><span class="contacts-tel">8 (795) 320-1999</span> <span class="contacts-mail">www.nikaestate.ru</span></div>
+<div class="contacts-logo"><img alt="" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" srcset="" /></div>
+</div>
+</div>
+<div class="page">
+<div class="conclude">
+<div class="conclude__header"><img alt="" class="conclude__header-img" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/консьерж-1.png" srcset="" />
+<div style="background: url('https://newflat.nikaestate.ru/wp-content/uploads/2019/07/e7a29dc3b3.jpg')center; background-size: cover;width: 36.65%;">&nbsp;</div>
+<div class="header-text">Звоните и приходите в наш уютный офис на Патриках!</div>
+</div>
+<div class="conclude-footer">
+<div class="footer__info"><span class="footer__title title">NIKA ESTATE</span>
+<p class="footer__text">Бутик элитной недвижимости, специализирующийся на подборе эксклюзивных объектов топового ценового сегмента, соответствующих самым высоким клиентским запросам!</p>
+</div>
+<div class="footer__right" style="background: #fff;border-left: 1px solid #dcdddf;">
+<div class="footer__contacts"><span class="footer__address">Москва, Сытинский переулок, дом 5/10 стр.3</span> <span class="footer__email">Email: info@nikaestate.ru</span>
+<div class="footer__contacts-bottom">
+<div class="footer__contacts-bottom-left"><span class="footer__contacts-bottom-tel">8 (795) 320-1999</span> <span class="footer__contacts-bottom-site">www.nikaestate.ru</span></div>
+<div class="footer__contacts-bottom-right"><img alt="" class="footer__contacts-logo" onload="var lastMasonry = document.querySelector('.last-masonry');var firstImgBlock = lastMasonry.querySelector('.masonry__gallery-item');if(firstImgBlock.querySelector('img') == null){lastMasonry.remove()}" src="https://newflat.nikaestate.ru/wp-content/uploads/2019/07/logo.png" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

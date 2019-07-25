@@ -12,7 +12,44 @@ document.addEventListener("DOMContentLoaded", function() {
     setPhoneMask();
     moveToForm();
     galleryFilterInit();
+    animateImage();
 });
+
+function animateImage(){
+
+    var options = {
+        movement: {
+            imgWrapper : {
+                translation : {x: 10, y: 10, z: 30},
+                rotation : {x: 0, y: -10, z: 0},
+                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+            },
+            lines : {
+                translation : {x: 10, y: 10, z: [0,70]},
+                rotation : {x: 0, y: 0, z: -2},
+                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+            },
+            caption : {
+                rotation : {x: 0, y: 0, z: 2},
+                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+            },
+            overlay : {
+                translation : {x: 10, y: -10, z: 0},
+                rotation : {x: 0, y: 0, z: 2},
+                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+            },
+            shine : {
+                translation : {x: 100, y: 100, z: 0},
+                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+            }
+        }
+    
+    }
+
+    new TiltFx(document.querySelectorAll('.tilter.tilter--1')[0], options);
+    new TiltFx(document.querySelectorAll('.tilter.tilter--1')[1], options);
+
+}
 
 function galleryFilterInit(){
     $('.gallery__list-link').on('click', function(){

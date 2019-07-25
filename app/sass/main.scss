@@ -6,9 +6,200 @@
 	box-sizing: inherit;
 }
 
+.tilter {
+	position: relative;
+	display: block;
+	flex: none;
+	width: 440px;
+	height: 520px;
+	margin: 30px 40px;
+	color: #fff;
+	perspective: 1000px;
+	&:last-child{
+		margin-left: 0;
+		margin-top: 127px;
+	}
+}
+
+.tilter * {
+	pointer-events: none;
+}
+
+.tilter:hover,
+.tilter:focus {
+	color: #fff;
+	outline: none;
+}
+
+.tilter__figure,
+.tilter__image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.tilter__figure > * {
+	transform: translateZ(0px); /* Force correct stacking order */
+}
+
+.tilter__figure {
+	position: relative;
+}
+
+.tilter__figure::before {
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	box-shadow: 0 30px 20px rgba(35,32,39,0.5);
+}
+
+.tilter__deco {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.tilter__deco--overlay {
+	background-image: linear-gradient(45deg, rgba(226, 60, 99, 0.4), rgba(145, 58, 252, 0.4), rgba(16, 11, 192, 0.4));
+}
+
+.tilter__deco--shine div {
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+}
+
+.tilter__deco--lines {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 1.5px;
+}
+
+.tilter__title{
+	font-family: '';
+}
+
+.quares .tilter__deco div{
+	background-image: linear-gradient(45deg,rgba(0, 0, 0, 0.5) 0,rgba(0, 0, 0, 0.45) 50%,#25242400 100%);
+}
+
+.tilter__caption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 4em;
+}
+
+.tilter__title {
+	font-family: 'Fira Sans', serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 1;
+	margin: 0;
+	text-align: center;
+}
+
+.header__price{
+	margin-left: 30px;
+}
+
+.tilter__description {
+	font-size: 0.85em;
+	margin: 1em 0 0 0;
+	letter-spacing: 0.15em;
+}
+
 body {
 	box-sizing: border-box;
 	font-family: 'Fira Sans';
+	font-size: 16px;
+}
+
+.title-22{
+	font-size: 22px;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.header__price{
+	color: $light;
+	font-weight: 300;
+	margin-top: -80px;
+}
+
+.header__contact-btn{
+	width: 100%;
+	border: 2px solid $light;
+	&:hover{
+		background: $light;
+		color: #fff;
+	}
+	&:first-child{
+		margin-bottom: 5px;
+	}
+}
+
+.header__contact{
+	display: flex;
+	background: #fff;
+	margin-top: auto;
+	height: 130px;
+	padding: 0 3%;
+	justify-content: space-between;
+}
+
+.header__contact-subtitle{
+	font-weight: 500;
+	color: #888888;
+}
+.header__contact-title{
+	color: #444444;
+}
+.header__contact-wrapper{
+	width: 33.333%;
+	display: flex;
+	
+	position: relative;
+	&:last-child::before{
+		content: '';
+		display: block;
+		height: 50%;
+		width: 9px;
+		position: absolute;
+		left: -50px;
+		top: 50%;
+		transform: translateY(-50%);
+		background-image: url('../img/@2x/643.png');
+		background-repeat: no-repeat;
+	}
+}
+
+.header__contact-item{
+	position: relative;
+	
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	&:last-child{
+	align-items: flex-end;
+	padding-top: 0;
+	justify-content: center;
+	}
+	
+}
+
+.quares{
+	display: flex;
 }
 
 .container {
@@ -19,8 +210,18 @@ body {
 .front__img-wrapper {
 	width: 35%;
 	overflow: hidden;
+	position: relative;
 }
-
+.header-title{
+	position: absolute;
+	text-align: left;
+	font-size: 30px;
+	bottom: 70px;
+	left: 45px;
+	color: $light;
+	font-weight: 600;
+	width: 80%;
+}
 .front__img {
 	height: 100%;
 }
@@ -28,6 +229,9 @@ body {
 .front__right {
 	width: 65%;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .soho-logo{
@@ -35,7 +239,31 @@ body {
 }
 
 .container--front{
+	position: relative;
 	height: 90vh;
+	&:after{
+		position: absolute;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 1px;
+		background: #fff;
+		opacity: 0.1;
+		top: 150px;
+	}
+}
+
+.nav__list-link.active{
+	position: relative;
+	&::after{
+		content: '';
+		display: block;
+		height: 3px;
+		width: 50px;
+		background-color: $light;
+		position: absolute;
+		bottom: -9.5px;
+	}
 }
 
 .header {
@@ -47,7 +275,7 @@ body {
 	justify-content: flex-end;
 
 	.logo-wrapper {
-		background: $green;
+		
 		width: 150px;
 		height: 150px;
 		display: flex;
@@ -55,7 +283,7 @@ body {
 		align-items: center;
 
 		.logo-img {
-			width: 80px;
+			width: 104px;
 			height: auto;
 		}
 	}
@@ -96,7 +324,7 @@ body {
 
 .nav__list-link {
 	font-family: 'Roboto';
-	color: $light;
+	color: #fff;
 	text-decoration: none;
 	font-size: 16px;
 
