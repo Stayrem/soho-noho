@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-	initItemMap();
+    initItemMap();
     setAppartmentSlider();
     setSliderBtns();
     openMobileMenu();
@@ -15,35 +15,82 @@ document.addEventListener("DOMContentLoaded", function() {
     animateImage();
 });
 
-function animateImage(){
+function animateImage() {
 
     var options = {
         movement: {
-            imgWrapper : {
-                translation : {x: 10, y: 10, z: 30},
-                rotation : {x: 0, y: -10, z: 0},
-                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+            imgWrapper: {
+                translation: {
+                    x: 10,
+                    y: 10,
+                    z: 30
+                },
+                rotation: {
+                    x: 0,
+                    y: -10,
+                    z: 0
+                },
+                reverseAnimation: {
+                    duration: 200,
+                    easing: 'easeOutQuad'
+                }
             },
-            lines : {
-                translation : {x: 10, y: 10, z: [0,70]},
-                rotation : {x: 0, y: 0, z: -2},
-                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+            lines: {
+                translation: {
+                    x: 10,
+                    y: 10,
+                    z: [0, 70]
+                },
+                rotation: {
+                    x: 0,
+                    y: 0,
+                    z: -2
+                },
+                reverseAnimation: {
+                    duration: 2000,
+                    easing: 'easeOutExpo'
+                }
             },
-            caption : {
-                rotation : {x: 0, y: 0, z: 2},
-                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+            caption: {
+                rotation: {
+                    x: 0,
+                    y: 0,
+                    z: 2
+                },
+                reverseAnimation: {
+                    duration: 200,
+                    easing: 'easeOutQuad'
+                }
             },
-            overlay : {
-                translation : {x: 10, y: -10, z: 0},
-                rotation : {x: 0, y: 0, z: 2},
-                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+            overlay: {
+                translation: {
+                    x: 10,
+                    y: -10,
+                    z: 0
+                },
+                rotation: {
+                    x: 0,
+                    y: 0,
+                    z: 2
+                },
+                reverseAnimation: {
+                    duration: 2000,
+                    easing: 'easeOutExpo'
+                }
             },
-            shine : {
-                translation : {x: 100, y: 100, z: 0},
-                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+            shine: {
+                translation: {
+                    x: 100,
+                    y: 100,
+                    z: 0
+                },
+                reverseAnimation: {
+                    duration: 200,
+                    easing: 'easeOutQuad'
+                }
             }
         }
-    
+
     }
 
     new TiltFx(document.querySelectorAll('.tilter.tilter--1')[0], options);
@@ -51,50 +98,68 @@ function animateImage(){
 
 }
 
-function galleryFilterInit(){
-    $('.gallery__list-link').on('click', function(){
+function galleryFilterInit() {
+    $('.gallery__list-link').on('click', function () {
         var galleryFilterBtn = this.getAttribute('rel');
-        if(galleryFilterBtn === 'group1'){
+        if (galleryFilterBtn === 'group1') {
             $('.group2,.group3').animate({
-            opacity: 0,
-        }, 300, function() {
-            $('.group2,.group3').css({'display':'none'});
-            $('.group1').css({'display':'block','opacity':'1'});
-            $('.grid-gallery').masonry();
-        });
-        }else if(galleryFilterBtn === 'group2'){
+                opacity: 0,
+            }, 300, function () {
+                $('.group2,.group3').css({
+                    'display': 'none'
+                });
+                $('.group1').css({
+                    'display': 'block',
+                    'opacity': '1'
+                });
+                $('.grid-gallery').masonry();
+            });
+        } else if (galleryFilterBtn === 'group2') {
             $('.group1,.group3').animate({
                 opacity: 0,
-            }, 300, function() {
-                $('.group1,.group3').css({'display':'none'});
-                $('.group2').css({'display':'block','opacity':'1'});
+            }, 300, function () {
+                $('.group1,.group3').css({
+                    'display': 'none'
+                });
+                $('.group2').css({
+                    'display': 'block',
+                    'opacity': '1'
+                });
                 $('.grid-gallery').masonry();
             });
-        }else if(galleryFilterBtn === 'group3'){
+        } else if (galleryFilterBtn === 'group3') {
             $('.group2,.group1').animate({
                 opacity: 0,
-            }, 300, function() {
-                $('.group2,.group1').css({'display':'none'});
-                $('.group3').css({'display':'block','opacity':'1'});
+            }, 300, function () {
+                $('.group2,.group1').css({
+                    'display': 'none'
+                });
+                $('.group3').css({
+                    'display': 'block',
+                    'opacity': '1'
+                });
                 $('.grid-gallery').masonry();
             });
-        }else{
-            $('.group1,.group3,.group2').css({'display':'block','opacity':'1'});    
+        } else {
+            $('.group1,.group3,.group2').css({
+                'display': 'block',
+                'opacity': '1'
+            });
             $('.grid-gallery').masonry();
         }
     });
 }
 
-function moveToForm(){
-    $('.pdf-btn').on('click', function(){
+function moveToForm() {
+    $('.pdf-btn').on('click', function () {
         $("#pdf").prop('checked', true);
         $([document.documentElement, document.body]).animate({
             scrollTop: $(".contact").offset().top
         }, 1500);
-        
+
 
     });
-    $('show-btn').on('click', function(){
+    $('show-btn').on('click', function () {
         $([document.documentElement, document.body]).animate({
             scrollTop: $(".show-btn").offset().top
         }, 1500);
@@ -104,57 +169,50 @@ function moveToForm(){
 }
 
 
-function setPhoneMask(){
-    $(function(){
-       $(".bfh-phone").mask("+7(999) 999-99-99");
-   });
-   document.querySelector('.bfh-phone').addEventListener('focus', function(){
-       moveCaretToStart(this)
-   })
+function setPhoneMask() {
+    $(function () {
+        $(".bfh-phone").mask("+7(999) 999-99-99");
+    });
+    document.querySelector('.bfh-phone').addEventListener('focus', function () {
+        moveCaretToStart(this)
+    })
 }
 
 // проверено в IE
-function moveCaretToStart(inputObject)
-{
- if (inputObject.createTextRange)
- {
-  var r = inputObject.createTextRange();
-  r.collapse(true);
-  r.select();
- }
+function moveCaretToStart(inputObject) {
+    if (inputObject.createTextRange) {
+        var r = inputObject.createTextRange();
+        r.collapse(true);
+        r.select();
+    }
 }
 
-function moveCaretToEnd(inputObject)
-{
- if (inputObject.createTextRange)
- {
-  var r = inputObject.createTextRange();
-  r.collapse(false);
-  r.select();
- }
+function moveCaretToEnd(inputObject) {
+    if (inputObject.createTextRange) {
+        var r = inputObject.createTextRange();
+        r.collapse(false);
+        r.select();
+    }
 }
 
 // проверено в FireFox
 
-function moveCaretToStart(inputObject)
-{
- if (inputObject.selectionStart)
- {
-  inputObject.setSelectionRange(0,0);
-  inputObject.focus();
- }
-}
-function moveCaretToEnd(inputObject)
-{
- if (inputObject.selectionStart)
- {
-  var end = inputObject.value.length;
-  inputObject.setSelectionRange(end,end);
-  inputObject.focus();
- }
+function moveCaretToStart(inputObject) {
+    if (inputObject.selectionStart) {
+        inputObject.setSelectionRange(0, 0);
+        inputObject.focus();
+    }
 }
 
-function formValidator(){
+function moveCaretToEnd(inputObject) {
+    if (inputObject.selectionStart) {
+        var end = inputObject.value.length;
+        inputObject.setSelectionRange(end, end);
+        inputObject.focus();
+    }
+}
+
+function formValidator() {
     $(".form").validate({
         rules: {
             name: {
@@ -173,7 +231,7 @@ function formValidator(){
     });
 }
 
-function scrollAmimationInit(){
+function scrollAmimationInit() {
     AOS.init({
         // Global settings:
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -184,8 +242,8 @@ function scrollAmimationInit(){
         disableMutationObserver: false, // disables automatic mutations' detections (advanced)
         debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
         throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-        
-      
+
+
         // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
         offset: 120, // offset (in px) from the original trigger point
         delay: 0, // values from 0 to 3000, with step 50ms
@@ -194,121 +252,132 @@ function scrollAmimationInit(){
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-      
-      });
+
+    });
 }
 
-function onePageScrollInit(){
+function onePageScrollInit() {
     $.scrollify({
-        section : ".page-scroll",
-        sectionName : "section-name",
-        interstitialSection : ".page-scroll--half",
+        section: ".page-scroll",
+        sectionName: "section-name",
+        interstitialSection: ".page-scroll--half",
         easing: "easeOutExpo",
         scrollSpeed: 1100,
-        offset : 0,
+        offset: 0,
         scrollbars: true,
         standardScrollElements: "",
         setHeights: true,
         overflowScroll: true,
         updateHash: true,
-        touchScroll:true,
+        touchScroll: true,
         scrollBar: false,
-        before:function() {},
-        after:function() {},
-        afterResize:function() {},
-        afterRender:function() {}
-      });
+        before: function () {},
+        after: function () {},
+        afterResize: function () {},
+        afterRender: function () {}
+    });
 }
 
-function masonryGalleryMaker(){
+function masonryGalleryMaker() {
     var $grid = $('.grid-gallery').masonry({
         itemSelector: '.grid-gallery-item',
         percentPosition: true,
         columnWidth: '.grid-sizer',
-      });
-      // layout Masonry after each image loads
-      $grid.imagesLoaded().progress( function() {
+    });
+    // layout Masonry after each image loads
+    $grid.imagesLoaded().progress(function () {
         $grid.masonry();
-      });  
+    });
 }
 
-function openMobileMenu(){
-    $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+function openMobileMenu() {
+    $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function () {
         $(this).toggleClass('open');
         $('.mobile-menu').toggleClass('mobile-menu--open');
     });
-    
+
 }
 
-function setAppartmentSlider(){
+function setAppartmentSlider() {
     var owl = $('.owl-carousel').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:true,
+        loop: false,
+        margin: 10,
+        nav: true,
         autoWidth: true,
         center: true,
         nav: false,
         loop: true,
-        responsive:{
-            0:{
-                items:1
+        responsive: {
+            0: {
+                items: 1
             },
-            600:{
-                items:3
+            600: {
+                items: 3
             },
-            1000:{
-                items:5
+            1000: {
+                items: 3
             }
         },
     })
-    owl.on('translated.owl.carousel', function(e) {
+    owl.on('translated.owl.carousel', function (e) {
         setSliderBtns();
     });
 }
 
-function appsFilterBtnEvent(){
-    $('.appartments__filter-item').click(function(){
+function appsFilterBtnEvent() {
+    $('.appartments__filter-item').click(function () {
         var aim = this.getAttribute('data-filter-slider');
         var slides = document.querySelectorAll('.appartments__slider .owl-item .slide-item');
         var counter = 0;
         for (let index = 0; index < slides.length && counter <= 0; index++) {
-            if(slides[index].classList.contains(aim)){
+            if (slides[index].classList.contains(aim)) {
                 counter++;
-                $('.owl-carousel').trigger('to.owl.carousel', index + 1 );
+                $('.owl-carousel').trigger('to.owl.carousel', index + 1);
             }
         }
     });
 }
 
-function setSliderBtns(){
-    
+function setSliderBtns() {
+
 
     $('.appartments__filter-item').removeClass('active');
     var $slideActive = $('.appartments__slider .owl-item.active.center .slide-item');
-    if($slideActive.hasClass('double')){
+    if ($slideActive.hasClass('double')) {
         $('.appartments__filter-item:nth-child(1)').addClass('active');
-    }else if($slideActive.hasClass('tripple')){
+    } else if ($slideActive.hasClass('tripple')) {
         $('.appartments__filter-item:nth-child(2)').addClass('active');
-    }else if($slideActive.hasClass('quadro')){
+    } else if ($slideActive.hasClass('quadro')) {
         $('.appartments__filter-item:nth-child(3)').addClass('active');
         console.log('quadro');
-    }else if($slideActive.hasClass('penthaus')){
+    } else if ($slideActive.hasClass('penthaus')) {
         $('.appartments__filter-item:nth-child(4)').addClass('active');
-  
+
     }
 }
 
 function initItemMap() {
     if (document.querySelector('.map') != null) {
 
-        markerImage = 'https://newflat.nikaestate.ru/wp-content/uploads/2019/05/marker-new.png';
+        markerImage = '../img/@2x/placeholder_(1).png';
         var coordinates = {
-                lat: 55.764139,
-                lng: 37.60063
+                lat: 55.785985,
+                lng: 37.585859
             },
 
+            center = {           
+                    lat: 55.785567,  
+                    lng: 37.565926
+            };
+            if ($(window).width() < 1200){
+                center = { 
+                    lat: 55.791790, 
+                    lng: 37.587001
+            };
+            }
             map = new google.maps.Map(document.querySelector('.map'), {
-                center: coordinates,
+                
+                center: center,
                 scrollwheel: false,
                 zoom: 15,
                 disableDefaultUI: true,
@@ -670,7 +739,7 @@ function initItemMap() {
     }
 }
 
-function changerValidateMessage(){
+function changerValidateMessage() {
 
     jQuery.extend(jQuery.validator.messages, {
         required: "Это поле обязательно для ввода",
