@@ -13,84 +13,57 @@ document.addEventListener("DOMContentLoaded", function () {
     moveToForm();
     galleryFilterInit();
     animateImage();
+    initPopup();
 });
+
+function initPopup() {
+    $('.header__contact-btn').magnificPopup({
+        loop: true,
+        type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        callbacks: {
+            beforeOpen: function() {
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+          }
+    });
+}
 
 function animateImage() {
 
     var options = {
         movement: {
-            imgWrapper: {
-                translation: {
-                    x: 10,
-                    y: 10,
-                    z: 30
-                },
-                rotation: {
-                    x: 0,
-                    y: -10,
-                    z: 0
-                },
-                reverseAnimation: {
-                    duration: 200,
-                    easing: 'easeOutQuad'
-                }
+            imgWrapper : {
+                translation : {x: 10, y: 10, z: 30},
+                rotation : {x: 0, y: -10, z: 0},
+                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
             },
-            lines: {
-                translation: {
-                    x: 10,
-                    y: 10,
-                    z: [0, 70]
-                },
-                rotation: {
-                    x: 0,
-                    y: 0,
-                    z: -2
-                },
-                reverseAnimation: {
-                    duration: 2000,
-                    easing: 'easeOutExpo'
-                }
+            lines : {
+                translation : {x: 10, y: 10, z: [0,70]},
+                rotation : {x: 0, y: 0, z: -2},
+                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
             },
-            caption: {
-                rotation: {
-                    x: 0,
-                    y: 0,
-                    z: 2
-                },
-                reverseAnimation: {
-                    duration: 200,
-                    easing: 'easeOutQuad'
-                }
+            caption : {
+                rotation : {x: 0, y: 0, z: 2},
+                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
             },
-            overlay: {
-                translation: {
-                    x: 10,
-                    y: -10,
-                    z: 0
-                },
-                rotation: {
-                    x: 0,
-                    y: 0,
-                    z: 2
-                },
-                reverseAnimation: {
-                    duration: 2000,
-                    easing: 'easeOutExpo'
-                }
+            overlay : {
+                translation : {x: 10, y: -10, z: 0},
+                rotation : {x: 0, y: 0, z: 2},
+                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
             },
-            shine: {
-                translation: {
-                    x: 100,
-                    y: 100,
-                    z: 0
-                },
-                reverseAnimation: {
-                    duration: 200,
-                    easing: 'easeOutQuad'
-                }
+            shine : {
+                translation : {x: 100, y: 100, z: 0},
+                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
             }
         }
-
     }
 
     new TiltFx(document.querySelectorAll('.tilter.tilter--1')[0], options);
@@ -257,25 +230,28 @@ function scrollAmimationInit() {
 }
 
 function onePageScrollInit() {
-    $.scrollify({
-        section: ".page-scroll",
-        sectionName: "section-name",
-        interstitialSection: ".page-scroll--half",
-        easing: "easeOutExpo",
-        scrollSpeed: 1100,
-        offset: 0,
-        scrollbars: true,
-        standardScrollElements: "",
-        setHeights: true,
-        overflowScroll: true,
-        updateHash: true,
-        touchScroll: true,
-        scrollBar: false,
-        before: function () {},
-        after: function () {},
-        afterResize: function () {},
-        afterRender: function () {}
-    });
+    if ($(window).width() > 992) {
+    
+        $.scrollify({
+            section: ".page-scroll",
+            sectionName: "section-name",
+            interstitialSection: ".page-scroll--half",
+            easing: "easeOutExpo",
+            scrollSpeed: 1100,
+            offset: 0,
+            scrollbars: true,
+            standardScrollElements: "",
+            setHeights: true,
+            overflowScroll: true,
+            updateHash: true,
+            touchScroll: true,
+            scrollBar: false,
+            before: function () {},
+            after: function () {},
+            afterResize: function () {},
+            afterRender: function () {}
+        });
+    }
 }
 
 function masonryGalleryMaker() {
@@ -359,24 +335,30 @@ function setSliderBtns() {
 function initItemMap() {
     if (document.querySelector('.map') != null) {
 
-        markerImage = '../img/@2x/placeholder_(1).png';
+        markerImage = '../img/@2x/placeholder(1).png';
         var coordinates = {
                 lat: 55.785985,
                 lng: 37.585859
             },
 
-            center = {           
-                    lat: 55.785567,  
-                    lng: 37.565926
+            center = {
+                lat: 55.785567,
+                lng: 37.565926
             };
-            if ($(window).width() < 1200){
-                center = { 
-                    lat: 55.791790, 
-                    lng: 37.587001
+        if ($(window).width() < 1200) {
+            center = {
+                lat: 55.791790,
+                lng: 37.587001
             };
-            }
-            map = new google.maps.Map(document.querySelector('.map'), {
-                
+        }
+        if ($(window).width() < 768) {
+            center = {
+                lat: 55.788703,             
+                lng: 37.585827
+            };
+        }
+        map = new google.maps.Map(document.querySelector('.map'), {
+
                 center: center,
                 scrollwheel: false,
                 zoom: 15,

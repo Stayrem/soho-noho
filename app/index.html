@@ -20,7 +20,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="css/bootstrap-formhelpers.min.css">
 	<link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/pater.css">
 
 	<link rel="stylesheet" href="css/styles.min.css">
@@ -41,9 +42,7 @@
 
 			<ul class="nav__list">
 				<li class="nav__list-item"><a href="index.html" class="nav__list-link active">Главная</a></li>
-				<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
 				<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея</a></li>
-				<li class="nav__list-item"><a href="banks.html" class="nav__list-link">Как купить?</a></li>
 				<li class="nav__list-item"><a href="#" class="nav__list-link">Проектная документация</a></li>
 			</ul>
 		</div>
@@ -67,9 +66,7 @@
 						<ul class="nav__list">
 							<li class="nav__list-item"><a href="index.html" class="nav__list-link active">Главная</a>
 							</li>
-							<li class="nav__list-item"><a href="#" class="nav__list-link">О Доме</a></li>
 							<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея</a></li>
-							<li class="nav__list-item"><a href="banks.html" class="nav__list-link">Как купить?</a></li>
 							<li class="nav__list-item"><a href="#" class="nav__list-link">Проектная документация</a></li>
 						</ul>
 					</nav>
@@ -109,11 +106,12 @@
 							</svg>
 						</figure>
 					</a>
+					<div class="header__price">
+						<span class="header__price-subtitle">Цены от:</span>
+						<div class="header__price-title title-22">от 15 000 000 руб.</div>
+					</div>
 				</div>
-				<div class="header__price">
-					<span class="header__price-subtitle">Цены от</span>
-					<div class="header__price-title title-22">от 15 000 000 руб.</div>
-				</div>
+
 				<div class="header__contact">
 					<div class="header__contact-wrapper">
 						<div class="header__contact-item">
@@ -137,7 +135,7 @@
 							<button class="header__contact-btn btn">
 								Оставить заявку
 							</button>
-							<button class="header__contact-btn btn">
+							<button href="#popup" data-effect="mfp-zoom-in" class="pdf popup-with-move-anim header__contact-btn btn">
 								Получить презентацию
 							</button>
 						</div>
@@ -227,12 +225,12 @@
 				<div class="appartment__right">
 					<div class="appartments__filter">
 						<button class="appartments__filter-item" data-filter-slider='double'>Двухкомнатные от
-							44м</button>
+							44 м²</button>
 						<button class="appartments__filter-item" data-filter-slider='tripple'>Трёхкомнатные от
-							82м</button>
+							82 м²</button>
 						<button class="appartments__filter-item" data-filter-slider='quadro'>Черырёхкомнатные от
-							82м</button>
-						<button class="appartments__filter-item" data-filter-slider='penthaus'>Пентхаусы от 82м</button>
+							82 м²</button>
+						<button class="appartments__filter-item" data-filter-slider='penthaus'>Пентхаусы от 82 м²</button>
 					</div>
 				</div>
 			</div>
@@ -537,6 +535,19 @@
 			</div>
 	</div>
 	</footer>
+	<div id="popup" class="popup mfp-hide mfp-with-anim animate fadeIn"  data-effect="zoom-anim-dialog">
+		<div class="popup__left"></div>
+		<div class="popup__right">
+			<h3 class="popup__title title dec">Ваша презентация готова</h3>
+			<p class="popup__text">Для того, чтобы скачать презентацию необходимо заполнить поля формы.</p>
+			<form class="popup-form" action="">
+				<input class=popup-input type="text" placeholder="Ваше имя...">
+				<input class=popup-input type="text" placeholder="Ваш телефон...">
+				<input class=popup-input type="text" placeholder="Ваш email...">
+				<button class="popup__btn btn" type="submit">Скачать презентацию</button>
+			</form>
+		</div>
+	</div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGqGPqhWtYRrVVRIzifWzarARNb46aXc&libraries=places">
 	</script>
@@ -554,6 +565,7 @@
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/anime.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/scripts.min.js"></script>
 	<script>
 		onePageScrollInit();
