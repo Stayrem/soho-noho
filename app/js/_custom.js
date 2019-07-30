@@ -7,74 +7,172 @@ document.addEventListener("DOMContentLoaded", function () {
     masonryGalleryMaker();
     scrollAmimationInit();
     appsFilterBtnEvent();
+    animateImage();
     formValidator();
     changerValidateMessage();
     setPhoneMask();
     moveToForm();
     galleryFilterInit();
-    animateImage();
+    sortMeiaGallery();
     initPopup();
+    $('.owl-carousel').trigger('to.owl.carousel', 1);
 });
 
-function initPopup() {
-    $('.header__contact-btn').magnificPopup({
-        loop: true,
-        type: 'inline',
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in',
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = this.st.el.attr('data-effect');
-            }
+function sendData(el, download) {
+
+    var name, phone, email;
+
+    if (download) {
+        name = $('#name-modal').val();
+        phone = $('#phone-modal').val();
+        email = $('#email-modal').val();
+    }
+    else {
+        name = $('#name').val();
+        phone = $('#phone').val();
+        email = $('#email').val();
+    }
+  
+    if (!$(el).hasClass('disabled') && !$(el).hasClass('loading')) {
+      $.ajax({
+        url: 'send_mail.php',
+        method: 'POST',
+        data: {
+          name: name,
+          phone: phone,
+          email: email,
+        },
+        beforeSend: function() {
+          switchLoading(el, 1);
+        },
+        error: function(response) {
+          switchLoading(el, 0);
+          showResponseMessage(el, 'danger');
+        },
+        success: function(response) {
+          switchLoading(el, 0);
+          showResponseMessage(el, 'success');
+          $('input').val('');
+          if (download) {
+            document.querySelector('.dwn-link').click();
           }
+        }
+      });
+    }
+  }
+
+  function switchLoading(el, stage) {
+	if (stage === 1) {
+		$(el).addClass('loading');
+	}
+	else {
+		$(el).removeClass('loading');
+	}
+}
+
+function sortMeiaGallery() {
+    var gallery = document.querySelector('.grid-gallery');
+    if (gallery != null) {
+        //var galleryCont = gallery.querySelector('.isotope-wrapper.half-gutter');
+
+
+        var url = window.location.toString();
+        var indexOfHash;
+
+        for (var i = url.length; i >= 0; i--) {
+            if (url[i] === '#') {
+                indexOfHash = i;
+            }
+        }
+
+        var mediaCategory = decodeURI(url.slice(indexOfHash + 1));
+        if(mediaCategory === 'view'){
+            setTimeout(function(){
+                $('.gallery__list-item:nth-child(2) button').click();
+            },500);
+            
+        }if(mediaCategory === 'interior'){
+            setTimeout(function(){
+                $('.gallery__list-item:nth-child(3) button').click();
+            },500);
+        }
+    }
+}
+
+window.onload = function() {
+    initLightGallery();
+}
+
+function initLightGallery(){
+    $(document).ready(function() {
+        $(".styles__right").lightGallery(); 
     });
+    $(document).ready(function() {
+        $(".grid-gallery").lightGallery({
+            selector : '.grid-gallery a'
+        }); 
+    });
+    
+}
+
+function initPopup() {
+    $('.pdf').magnificPopup({
+        
+        removalDelay: 500, //delay removal by X to allow out-animation
+        callbacks: {
+          beforeOpen: function() {
+             this.st.mainClass = this.st.el.attr('data-effect');
+          }
+        },
+        midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+      });
 }
 
 function animateImage() {
-
-    var options = {
-        movement: {
-            imgWrapper : {
-                translation : {x: 10, y: 10, z: 30},
-                rotation : {x: 0, y: -10, z: 0},
-                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
-            },
-            lines : {
-                translation : {x: 10, y: 10, z: [0,70]},
-                rotation : {x: 0, y: 0, z: -2},
-                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
-            },
-            caption : {
-                rotation : {x: 0, y: 0, z: 2},
-                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
-            },
-            overlay : {
-                translation : {x: 10, y: -10, z: 0},
-                rotation : {x: 0, y: 0, z: 2},
-                reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
-            },
-            shine : {
-                translation : {x: 100, y: 100, z: 0},
-                reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+    if($('.tilter.tilter--1').length > 0){
+        var options = {
+            movement: {
+                imgWrapper : {
+                    translation : {x: 10, y: 10, z: 30},
+                    rotation : {x: 0, y: -10, z: 0},
+                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                },
+                lines : {
+                    translation : {x: 10, y: 10, z: [0,70]},
+                    rotation : {x: 0, y: 0, z: -2},
+                    reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+                },
+                caption : {
+                    rotation : {x: 0, y: 0, z: 2},
+                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                },
+                overlay : {
+                    translation : {x: 10, y: -10, z: 0},
+                    rotation : {x: 0, y: 0, z: 2},
+                    reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+                },
+                shine : {
+                    translation : {x: 100, y: 100, z: 0},
+                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                }
             }
         }
+    
+        new TiltFx(document.querySelectorAll('.tilter.tilter--1')[0], options);
+        new TiltFx(document.querySelectorAll('.tilter.tilter--1')[1], options);
+    
     }
-
-    new TiltFx(document.querySelectorAll('.tilter.tilter--1')[0], options);
-    new TiltFx(document.querySelectorAll('.tilter.tilter--1')[1], options);
 
 }
 
 function galleryFilterInit() {
+    
     $('.gallery__list-link').on('click', function () {
+        $('.gallery__list-link').removeClass('active');
+        $(this).addClass('active');
         var galleryFilterBtn = this.getAttribute('rel');
         if (galleryFilterBtn === 'group1') {
+            $('.grid-gallery-item a').removeClass('active');
             $('.group2,.group3').animate({
                 opacity: 0,
             }, 300, function () {
@@ -86,8 +184,15 @@ function galleryFilterInit() {
                     'opacity': '1'
                 });
                 $('.grid-gallery').masonry();
+                $('.group1 a').addClass('active');
+                $(document).ready(function() {
+                    $(".grid-gallery").lightGallery({
+                        selector : '.grid-gallery a.active'
+                    }); 
+                });
             });
         } else if (galleryFilterBtn === 'group2') {
+            $('.grid-gallery-item a').removeClass('active');
             $('.group1,.group3').animate({
                 opacity: 0,
             }, 300, function () {
@@ -99,8 +204,15 @@ function galleryFilterInit() {
                     'opacity': '1'
                 });
                 $('.grid-gallery').masonry();
+                $('.group2 a').addClass('active');
+                $(document).ready(function() {
+                    $(".grid-gallery").lightGallery({
+                        selector : '.grid-gallery a.active'
+                    }); 
+                });
             });
         } else if (galleryFilterBtn === 'group3') {
+            $('.grid-gallery-item a').removeClass('active');
             $('.group2,.group1').animate({
                 opacity: 0,
             }, 300, function () {
@@ -112,6 +224,12 @@ function galleryFilterInit() {
                     'opacity': '1'
                 });
                 $('.grid-gallery').masonry();
+                $('.group3 a').addClass('active');
+                $(document).ready(function() {
+                    $(".grid-gallery").lightGallery({
+                        selector : '.grid-gallery a.active'
+                    }); 
+                });
             });
         } else {
             $('.group1,.group3,.group2').css({
@@ -119,36 +237,37 @@ function galleryFilterInit() {
                 'opacity': '1'
             });
             $('.grid-gallery').masonry();
+            $(document).ready(function() {
+                $(".grid-gallery").lightGallery({
+                    selector : '.grid-gallery a'
+                }); 
+            });
         }
     });
 }
 
 function moveToForm() {
-    $('.pdf-btn').on('click', function () {
-        $("#pdf").prop('checked', true);
+   
+    $('.toform').on('click', function () {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $(".contact").offset().top
+            scrollTop: $(".form-wrapper").offset().top
         }, 1500);
-
-
-    });
-    $('show-btn').on('click', function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $(".show-btn").offset().top
-        }, 1500);
-        $("#pdf").prop('checked', false);
+        $(".input-name").focus();
 
     });
 }
 
 
 function setPhoneMask() {
-    $(function () {
-        $(".bfh-phone").mask("+7(999) 999-99-99");
-    });
-    document.querySelector('.bfh-phone').addEventListener('focus', function () {
-        moveCaretToStart(this)
-    })
+    if(document.querySelector(".bfh-phone") != null){
+        $(function () {
+            $(".bfh-phone").mask("+7(999) 999-99-99");
+        });
+        document.querySelector('.bfh-phone').addEventListener('focus', function () {
+            moveCaretToStart(this)
+        })
+    }
+   
 }
 
 // проверено в IE
@@ -259,6 +378,7 @@ function masonryGalleryMaker() {
         itemSelector: '.grid-gallery-item',
         percentPosition: true,
         columnWidth: '.grid-sizer',
+      
     });
     // layout Masonry after each image loads
     $grid.imagesLoaded().progress(function () {
@@ -282,7 +402,7 @@ function setAppartmentSlider() {
         autoWidth: true,
         center: true,
         nav: false,
-        loop: true,
+        
         responsive: {
             0: {
                 items: 1
@@ -307,16 +427,17 @@ function appsFilterBtnEvent() {
         var counter = 0;
         for (let index = 0; index < slides.length && counter <= 0; index++) {
             if (slides[index].classList.contains(aim)) {
+                console.log(slides[index])
+                console.log(index)
+                $('.owl-carousel').trigger('to.owl.carousel', index);
                 counter++;
-                $('.owl-carousel').trigger('to.owl.carousel', index + 1);
             }
         }
     });
 }
 
 function setSliderBtns() {
-
-
+    
     $('.appartments__filter-item').removeClass('active');
     var $slideActive = $('.appartments__slider .owl-item.active.center .slide-item');
     if ($slideActive.hasClass('double')) {
