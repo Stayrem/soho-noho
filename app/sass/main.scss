@@ -2407,7 +2407,6 @@ a {
 	padding: 0 40px;
 	background-image: url(../img/@2x/1.jpg);
 	margin: 0;
-	height: fill-available;
 	position: relative;
 	padding-bottom: 70px;
 	&::before {
@@ -2923,6 +2922,9 @@ a {
 }
 
 @media (max-width: 480px) {
+	.container--front{
+		height: unset !important;
+	}
 	.footer{
 		padding-top: 50px;
 	}
