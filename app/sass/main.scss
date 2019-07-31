@@ -132,7 +132,7 @@
 	position: absolute;
     bottom: 0;
 	left: 40px;
-	margin-bottom: 25px;
+	bottom: -35px;
 }
 .tilter * {
 	pointer-events: none;
@@ -1091,6 +1091,7 @@ p.styles__text:last-child{
 }
 
 .to-gallery{
+	z-index: 9999;
 	position: absolute;
 	padding-right: 60px;
 	text-align: right;
