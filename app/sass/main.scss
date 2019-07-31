@@ -2406,7 +2406,7 @@ a {
 	padding: 0 40px;
 	background-image: url(../img/@2x/1.jpg);
 	margin: 0;
-	height: 600px;
+	height: -webkit-fill-available;
 	position: relative;
 	padding-bottom: 70px;
 	&::before {
