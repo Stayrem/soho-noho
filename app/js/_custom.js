@@ -633,7 +633,7 @@ function setSliderBtns() {
 function initItemMap() {
     if (document.querySelector('.map') != null) {
 
-        markerImage = '../img/@2x/placeholder(1).png';
+        markerImage = '../img/@2x/placeholder.png';
         var coordinates = {
                 lat: 55.785985,
                 lng: 37.585859
