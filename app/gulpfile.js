@@ -50,7 +50,7 @@ gulp.task('scripts', function() {
 		])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify()) // Minify js (opt.)
-	.pipe(gulp.dest('app/js'))
+	.pipe(gulp.dest('js/'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
