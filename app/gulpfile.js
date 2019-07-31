@@ -45,12 +45,12 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		// 'node_modules/jquery/dist/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
-		'js/_lazy.js', // JS library plug-in example
-		'js/_custom.js', // Custom scripts. Always at the end
+		'app/js/_lazy.js', // JS library plug-in example
+		'app/js/_custom.js', // Custom scripts. Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify()) // Minify js (opt.)
-	.pipe(gulp.dest('js/'))
+	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
