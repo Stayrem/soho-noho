@@ -1,3 +1,4 @@
+var owl;
 document.addEventListener("DOMContentLoaded", function () {
 
     initItemMap();
@@ -15,8 +16,86 @@ document.addEventListener("DOMContentLoaded", function () {
     galleryFilterInit();
     sortMeiaGallery();
     initPopup();
+    mobileScrollTo();
     $('.owl-carousel').trigger('to.owl.carousel', 1);
+    validateSubscription();
+    filterSlides();
+    $('.appartments__filter-item:first-child').click();
 });
+
+function filterSlides(){
+    
+    
+    $( '.appartments__filter' ).on( 'click', '.appartments__filter-item', function() {
+
+        var $item = $(this);
+        $('.appartments__filter-item').removeClass('active');
+        $(this).addClass('active');
+        var filter = $item.data( 'owl-filter' )
+    
+        owl.owlcarousel2_filter( filter );
+        $('.owl-carousel').trigger('to.owl.carousel', 1);
+    } )
+}
+
+function validateSubscription() {
+    var elm = document.querySelector(".subscribe__form input");
+    var errorElm = document.getElementById("error-user-email");
+    var successBtn = document.querySelector('.subscribe__submit');
+    if (successBtn != null) {
+        successBtn.addEventListener("click", validator);
+
+        function validator() {
+            errorElm.style.display = ValidateEmail(elm.value) ? "none" : "block";
+            if (ValidateEmail(elm.value)) {
+                subscribeAjaxSender();
+            }
+        }
+        successBtn.addEventListener('click', function () {})
+        var emailPattern = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+
+        function ValidateEmail(email) {
+            return emailPattern.test(email);
+        }
+    }
+}
+
+function subscribeAjaxSender() {
+    //var $nameUrl = '&fields[Name]=';
+    var $url = 'https://api.unisender.com/ru/api/subscribe?format=json&api_key=6ymtxf34uo6gteook3g653g9j7s7hedhs7kwp36a&list_ids=17947745&fields[email]=';
+
+    $(function () {
+
+        var $form = $(this);
+        $.ajax({
+            type: 'POST',
+            url: $url + $('.subscribe__form').find('input').val(),
+            data: $form.serialize()
+        }).done(function () {
+
+            $('#confirm-email').slideDown();
+            $('#error-user-email').slideUp();
+            $('#fail-email').slideUp();
+        }).fail(function () {
+            $('#fail-email').slideDown();
+            $('#confirm-email').slideUp();
+            $('#error-user-email').slideUp();
+        });
+        //отмена действия по умолчанию для кнопки submit
+
+        console.log($url + $('.subscribe__form').find('input').val())
+
+    });
+}
+
+function mobileScrollTo() {
+    $('.header-mobile__btn').on('click', function () {
+
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(".grid").offset().top
+        }, 800);
+    });
+}
 
 function sendData(el, download) {
 
@@ -26,48 +105,68 @@ function sendData(el, download) {
         name = $('#name-modal').val();
         phone = $('#phone-modal').val();
         email = $('#email-modal').val();
-    }
-    else {
+
+    } else {
         name = $('#name').val();
         phone = $('#phone').val();
         email = $('#email').val();
-    }
-  
-    if (!$(el).hasClass('disabled') && !$(el).hasClass('loading')) {
-      $.ajax({
-        url: 'send_mail.php',
-        method: 'POST',
-        data: {
-          name: name,
-          phone: phone,
-          email: email,
-        },
-        beforeSend: function() {
-          switchLoading(el, 1);
-        },
-        error: function(response) {
-          switchLoading(el, 0);
-          showResponseMessage(el, 'danger');
-        },
-        success: function(response) {
-          switchLoading(el, 0);
-          showResponseMessage(el, 'success');
-          $('input').val('');
-          if (download) {
-            document.querySelector('.dwn-link').click();
-          }
-        }
-      });
-    }
-  }
 
-  function switchLoading(el, stage) {
-	if (stage === 1) {
-		$(el).addClass('loading');
-	}
-	else {
-		$(el).removeClass('loading');
-	}
+    }
+
+
+    if (true) {
+
+        $.ajax({
+            url: '/send_mail.php',
+            method: 'POST',
+            data: {
+                name: name,
+                phone: phone,
+                email: email,
+            },
+            beforeSend: function () {
+                switchLoading(el, 1);
+            },
+            error: function (response) {
+                switchLoading(el, 0);
+                showResponseMessage(el, 'danger');
+            },
+            success: function (response) {
+                switchLoading(el, 0);
+                showResponseMessage(el, 'success');
+                $('input').val('');
+                if (download) {
+                    document.querySelector('.dwn-link').click();
+                }
+            }
+        });
+    }
+}
+
+function showResponseMessage(elem, aim) {
+    if (aim === 'danger') {
+        elem.find('.fail').css({
+            'display': 'block'
+        });
+        elem.find('.success').css({
+            'display': 'none'
+        });
+    } else if (aim === 'success') {
+        elem.find('.fail').css({
+            'display': 'none'
+        });
+        elem.find('.success').css({
+            'display': 'block'
+        });
+    }
+}
+
+function switchLoading(el, stage) {
+    if (stage === 1) {
+        el.find('button').addClass('loading');
+    } else {
+        el.find('button').removeClass('loading');
+    }
 }
 
 function sortMeiaGallery() {
@@ -86,87 +185,135 @@ function sortMeiaGallery() {
         }
 
         var mediaCategory = decodeURI(url.slice(indexOfHash + 1));
-        if(mediaCategory === 'view'){
-            setTimeout(function(){
+        if (mediaCategory === 'view') {
+            setTimeout(function () {
                 $('.gallery__list-item:nth-child(2) button').click();
-            },500);
-            
-        }if(mediaCategory === 'interior'){
-            setTimeout(function(){
+            }, 500);
+
+        }
+        if (mediaCategory === 'interior') {
+            setTimeout(function () {
                 $('.gallery__list-item:nth-child(3) button').click();
-            },500);
+            }, 500);
         }
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     initLightGallery();
 }
 
-function initLightGallery(){
-    $(document).ready(function() {
-        $(".styles__right").lightGallery(); 
+function initLightGallery() {
+    $(document).ready(function () {
+        $(".styles__right").lightGallery();
     });
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(".grid-gallery").lightGallery({
-            selector : '.grid-gallery a'
-        }); 
+            selector: '.grid-gallery a'
+        });
     });
-    
+
 }
 
 function initPopup() {
     $('.pdf').magnificPopup({
-        
+
         removalDelay: 500, //delay removal by X to allow out-animation
         callbacks: {
-          beforeOpen: function() {
-             this.st.mainClass = this.st.el.attr('data-effect');
-          }
+            beforeOpen: function () {
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
         },
         midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-      });
+    });
 }
 
 function animateImage() {
-    if($('.tilter.tilter--1').length > 0){
+    if ($('.tilter.tilter--1').length > 0) {
         var options = {
             movement: {
-                imgWrapper : {
-                    translation : {x: 10, y: 10, z: 30},
-                    rotation : {x: 0, y: -10, z: 0},
-                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                imgWrapper: {
+                    translation: {
+                        x: 10,
+                        y: 10,
+                        z: 30
+                    },
+                    rotation: {
+                        x: 0,
+                        y: -10,
+                        z: 0
+                    },
+                    reverseAnimation: {
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    }
                 },
-                lines : {
-                    translation : {x: 10, y: 10, z: [0,70]},
-                    rotation : {x: 0, y: 0, z: -2},
-                    reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+                lines: {
+                    translation: {
+                        x: 10,
+                        y: 10,
+                        z: [0, 70]
+                    },
+                    rotation: {
+                        x: 0,
+                        y: 0,
+                        z: -2
+                    },
+                    reverseAnimation: {
+                        duration: 2000,
+                        easing: 'easeOutExpo'
+                    }
                 },
-                caption : {
-                    rotation : {x: 0, y: 0, z: 2},
-                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                caption: {
+                    rotation: {
+                        x: 0,
+                        y: 0,
+                        z: 2
+                    },
+                    reverseAnimation: {
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    }
                 },
-                overlay : {
-                    translation : {x: 10, y: -10, z: 0},
-                    rotation : {x: 0, y: 0, z: 2},
-                    reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+                overlay: {
+                    translation: {
+                        x: 10,
+                        y: -10,
+                        z: 0
+                    },
+                    rotation: {
+                        x: 0,
+                        y: 0,
+                        z: 2
+                    },
+                    reverseAnimation: {
+                        duration: 2000,
+                        easing: 'easeOutExpo'
+                    }
                 },
-                shine : {
-                    translation : {x: 100, y: 100, z: 0},
-                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                shine: {
+                    translation: {
+                        x: 100,
+                        y: 100,
+                        z: 0
+                    },
+                    reverseAnimation: {
+                        duration: 200,
+                        easing: 'easeOutQuad'
+                    }
                 }
             }
         }
-    
+
         new TiltFx(document.querySelectorAll('.tilter.tilter--1')[0], options);
         new TiltFx(document.querySelectorAll('.tilter.tilter--1')[1], options);
-    
+
     }
 
 }
 
 function galleryFilterInit() {
-    
+
     $('.gallery__list-link').on('click', function () {
         $('.gallery__list-link').removeClass('active');
         $(this).addClass('active');
@@ -185,10 +332,10 @@ function galleryFilterInit() {
                 });
                 $('.grid-gallery').masonry();
                 $('.group1 a').addClass('active');
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $(".grid-gallery").lightGallery({
-                        selector : '.grid-gallery a.active'
-                    }); 
+                        selector: '.grid-gallery a.active'
+                    });
                 });
             });
         } else if (galleryFilterBtn === 'group2') {
@@ -205,10 +352,10 @@ function galleryFilterInit() {
                 });
                 $('.grid-gallery').masonry();
                 $('.group2 a').addClass('active');
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $(".grid-gallery").lightGallery({
-                        selector : '.grid-gallery a.active'
-                    }); 
+                        selector: '.grid-gallery a.active'
+                    });
                 });
             });
         } else if (galleryFilterBtn === 'group3') {
@@ -225,10 +372,10 @@ function galleryFilterInit() {
                 });
                 $('.grid-gallery').masonry();
                 $('.group3 a').addClass('active');
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $(".grid-gallery").lightGallery({
-                        selector : '.grid-gallery a.active'
-                    }); 
+                        selector: '.grid-gallery a.active'
+                    });
                 });
             });
         } else {
@@ -237,17 +384,17 @@ function galleryFilterInit() {
                 'opacity': '1'
             });
             $('.grid-gallery').masonry();
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $(".grid-gallery").lightGallery({
-                    selector : '.grid-gallery a'
-                }); 
+                    selector: '.grid-gallery a'
+                });
             });
         }
     });
 }
 
 function moveToForm() {
-   
+
     $('.toform').on('click', function () {
         $([document.documentElement, document.body]).animate({
             scrollTop: $(".form-wrapper").offset().top
@@ -259,7 +406,7 @@ function moveToForm() {
 
 
 function setPhoneMask() {
-    if(document.querySelector(".bfh-phone") != null){
+    if (document.querySelector(".bfh-phone") != null) {
         $(function () {
             $(".bfh-phone").mask("+7(999) 999-99-99");
         });
@@ -267,7 +414,15 @@ function setPhoneMask() {
             moveCaretToStart(this)
         })
     }
-   
+    if (document.querySelector("#phone-modal") != null) {
+        $(function () {
+            $("#phone-modal").mask("+7(999) 999-99-99");
+        });
+        document.querySelector('#phone-modal').addEventListener('focus', function () {
+            moveCaretToStart(this)
+        })
+    }
+
 }
 
 // проверено в IE
@@ -319,6 +474,28 @@ function formValidator() {
                 required: true,
                 minlength: 10
             }
+        },
+        submitHandler: function () {
+            sendData($(this), false);
+        }
+    });
+    $(".popup-form").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 3
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            tel: {
+                required: true,
+                minlength: 10
+            }
+        },
+        submitHandler: function () {
+            sendData($(this), true);
         }
     });
 }
@@ -350,7 +527,7 @@ function scrollAmimationInit() {
 
 function onePageScrollInit() {
     if ($(window).width() > 992) {
-    
+
         $.scrollify({
             section: ".page-scroll",
             sectionName: "section-name",
@@ -378,7 +555,7 @@ function masonryGalleryMaker() {
         itemSelector: '.grid-gallery-item',
         percentPosition: true,
         columnWidth: '.grid-sizer',
-      
+
     });
     // layout Masonry after each image loads
     $grid.imagesLoaded().progress(function () {
@@ -395,14 +572,14 @@ function openMobileMenu() {
 }
 
 function setAppartmentSlider() {
-    var owl = $('.owl-carousel').owlCarousel({
+        owl = $('.owl-carousel').owlCarousel({
         loop: false,
         margin: 10,
         nav: true,
         autoWidth: true,
         center: true,
         nav: false,
-        
+
         responsive: {
             0: {
                 items: 1
@@ -437,7 +614,7 @@ function appsFilterBtnEvent() {
 }
 
 function setSliderBtns() {
-    
+
     $('.appartments__filter-item').removeClass('active');
     var $slideActive = $('.appartments__slider .owl-item.active.center .slide-item');
     if ($slideActive.hasClass('double')) {
@@ -474,7 +651,7 @@ function initItemMap() {
         }
         if ($(window).width() < 768) {
             center = {
-                lat: 55.788703,             
+                lat: 55.788703,
                 lng: 37.585827
             };
         }
