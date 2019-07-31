@@ -2025,7 +2025,7 @@ p.styles__text:last-child{
 	width: 100%;
 	background-color: $dark;
 	height: 0;
-	z-index: 9999;
+	z-index: 1000;
 	overflow: hidden;
 	transition: all 0.7s;
 }
@@ -2354,9 +2354,9 @@ a {
 		margin: 0;
 		top: 28px;
 		right: 30px;
-		z-index: 9999999;
+		z-index: 1010;
 		transform: scale(.5);
-		z-index: 999999;
+		
 	}
 
 	#nav-icon2 span {
@@ -2373,7 +2373,7 @@ a {
 		margin: 0;
 		top: 15px;
 		right: 30px;
-		z-index: 9999999;
+		z-index: 1000;
 		-webkit-transform: scale(.7);
 		-ms-transform: scale(.7);
 		transform: scale(.7);
