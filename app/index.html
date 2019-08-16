@@ -5,15 +5,17 @@
 
 	<meta charset="utf-8">
 	<title>SOHO NOHO | Клубный дом на Белорусской</title>
-	<meta name="description" content="">
+	<meta name="description"
+		content="Роскошные апартаменты бизнес-класса с дизайнерской отделкой у метро Белорусская! Собственная терраса, отличный вид на центр, подземный паркинг! От 15 млн! Современный клубный дом. Выгодное предложение!">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width">
-	<meta property="og:title"
-		content="">
+	<meta property="og:title" content="SOHO NOHO | Клубный дом на Белорусско">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://soho-noho.moscow">
 	<meta property="og:image" content="https://soho-noho.moscow/img/social-img.png">
-	<meta property="og:description" content="">
+	<meta property="og:description"
+		content="Роскошные апартаменты бизнес-класса с дизайнерской отделкой у метро Белорусская! Собственная терраса, отличный вид на центр, подземный паркинг! От 15 млн! Современный клубный дом. Выгодное предложение!">
+	<meta name="yandex-verification" content="090cffe04811116c" />
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
 	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
@@ -40,7 +42,41 @@
 	<link rel="stylesheet" href="css/component.css">
 
 	<link rel="stylesheet" href="css/styles.min.css">
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function (m, e, t, r, i, k, a) {
+			m[i] = m[i] || function () {
+				(m[i].a = m[i].a || []).push(arguments)
+			};
+			m[i].l = 1 * new Date();
+			k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,
+				a)
+		})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+		ym(54682213, "init", {
+			clickmap: true,
+			trackLinks: true,
+			accurateTrackBounce: true,
+			webvisor: true
+		});
+	</script>
+	<noscript>
+		<div><img src="https://mc.yandex.ru/watch/54682213" style="position:absolute; left:-9999px;" alt="" /></div>
+	</noscript>
+	<!-- /Yandex.Metrika counter -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139001395-6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-139001395-6');
+	</script>
 </head>
 
 <body>
@@ -56,8 +92,8 @@
 		<div class="mobile-menu">
 
 			<ul class="nav__list">
-				<li class="nav__list-item"><a href="index.html" class="nav__list-link active">Главная</a></li>
-				<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея фотографий</a></li>
+				<li class="nav__list-item"><a href="/" class="nav__list-link active">Главная</a></li>
+				<li class="nav__list-item"><a href="/gallery" class="nav__list-link">Галерея фотографий</a></li>
 				<li class="nav__list-item hide"><a href="#" class="nav__list-link">Проектная документация</a></li>
 			</ul>
 		</div>
@@ -65,23 +101,23 @@
 		<div class="container front container--front page-scroll">
 			<div class="front__img-wrapper" style="background-image: url(img/@2x/1.jpg)">
 				<img src="img/@2x/images.jpg" alt="" class="logo soho-logo">
-				<div class="header-title">Ключи от готового апартамента
+				<div data-aos="fade-up" data-aos-duration="1200" class="header-title">Ключи от готового апартамента
 					с отделкой в 2020 г.</div>
 			</div>
 
 			<div class="front__right">
 				<header class="header">
 					<div class="logo-wrapper">
-						<a href="index.html"><img class="logo-img" src="img/@2x/nika_logo.png" alt="" srcset=""></a>
+						<a href="/"><img class="logo-img" src="img/@2x/logo.svg" alt="" srcset=""></a>
 
 					</div>
 					<img src="img/@2x/images.jpg" alt="" class="logo soho-logo soho-logo--tablet">
 					<nav class="header-nav">
 
 						<ul class="nav__list">
-							<li class="nav__list-item"><a href="index.html" class="nav__list-link active">Главная</a>
+							<li class="nav__list-item"><a href="/" class="nav__list-link active">Главная</a>
 							</li>
-							<li class="nav__list-item"><a href="gallery.html" class="nav__list-link">Галерея
+							<li class="nav__list-item"><a href="/gallery" class="nav__list-link">Галерея
 									фотографий</a></li>
 							<li class="nav__list-item hide"><a href="#" class="nav__list-link">Проектная
 									документация</a>
@@ -100,9 +136,12 @@
 							с отделкой в 2020 г.</h2>
 						<button class="header-mobile__btn btn">Подробнее</button>
 					</div>
-					<a href="gallery.html#view" class="tilter tilter--1">
+					<a data-aos-duration="1200" data-aos="zoom-out" href="gallery.html#view" class="tilter tilter--1">
 						<figure class="tilter__figure">
-							<img class="tilter__image" src="img/@2x/SOHO1.jpg" alt="img01">
+							<picture>
+								<source srcset="img/@1x/SOHO1.jpg" media="(max-width: 1200px)">
+								<img class="tilter__image" src="img/@2x/SOHO1.jpg" alt="img01">
+							</picture>
 							<div class="tilter__deco tilter__deco--shine">
 								<div></div>
 							</div>
@@ -115,9 +154,14 @@
 							</svg>
 						</figure>
 					</a>
-					<a href="gallery.html#interior" class="tilter tilter--1">
+					<a data-aos-duration="1200" data-aos-delay="300" data-aos="zoom-out" href="gallery.html#interior"
+						class="tilter tilter--1">
 						<figure class="tilter__figure">
-							<img class="tilter__image" src="img/@2x/11silver07.jpg" alt="img01">
+							<picture>
+								<source srcset="img/@1x/11silver07.jpg" media="(max-width: 1200px)">
+								<img class="tilter__image" src="img/@2x/11silver07.jpg" alt="img01">
+							</picture>
+
 							<div class="tilter__deco tilter__deco--shine">
 								<div></div>
 							</div>
@@ -130,13 +174,14 @@
 							</svg>
 						</figure>
 					</a>
+
+				</div>
+
+				<div class="header__contact">
 					<div class="header__price">
 						<span class="header__price-subtitle">Цены от:</span>
 						<div class="header__price-title title-22">от 15 000 000 руб.</div>
 					</div>
-				</div>
-
-				<div class="header__contact">
 					<div class="header__contact-wrapper">
 						<div class="header__contact-item">
 							<span class="header__contact-subtitle">Телефон:</span>
@@ -151,7 +196,7 @@
 					</div>
 					<div class="header__contact-wrapper">
 						<div class="header__contact-item header__contact-item--dec">
-							<img src="img/@2x/643.png" alt="" class="header__contact-dec">
+							<img src="img/@2x/divider.svg" alt="" class="header__contact-dec">
 						</div>
 					</div>
 					<div class="header__contact-wrapper">
@@ -218,7 +263,8 @@
 		<div class="container location  page-scroll--half">
 			<div class="location__inner">
 				<div class="locaton__title">Расположение в центре Москвы</div>
-				<p class="location__text">Место, где стоит SOHO + NOHO, во все времена было связано с движением из
+				<p class="location__text">Место, где стоит <b>SOHO + NOHO</b>, во все времена было связано с движением
+					из
 					города в мир. Самой историей оно предназначено для энергичных покорителей пространства. Отсюда до
 					Северной столицы протянулось первое в России шоссе. Полтора века назад на площади появился
 					Смоленский вокзал, предшественник современного Белорусского вокзала, связавший Москву с Европой.
@@ -241,7 +287,7 @@
 		<div class="container appartament  page-scroll--half">
 			<div class="apparment__wrapper">
 				<div class="appartment__left">
-					<h2 class="appartment__title dec" data-aos="fade-up">Выбор апартаментов</h2>
+					<h2 class="appartment__title dec">Выбор апартаментов</h2>
 					<p class="appartment__text">
 						Важной особенностью проекта является то, что все апартаменты предусматривают отделку, которая
 						уже включена в стоимость. Голландская дизайнерская мастерская Crea+ создала стильные и
@@ -1277,11 +1323,38 @@
 					Презентацию</a>
 
 			</div>
-			<div class="styles__right"> <a class="styles-img-wrapper" data-src="img/@2x/21silver03.jpg"><img
-						src="img/@2x/21silver03.jpg" alt="" class="styles__img"></a>
-				<a class="styles-img-wrapper" data-src="img/@2x/11bronze03.jpg"><img src="img/@2x/11bronze03.jpg" alt=""
-						class="styles__img"></a>
+			<div class="styles__right">
+				<div data-aos="fade-up" data-aos-duration="1200" class="styles-img-wrapper">
+					<a href="img/@2x/21silver03.jpg">
+						<picture>
+							<source srcset="img/@1x/21silver03.jpg" media="(max-width: 600px)">
+							<img src="img/@2x/21silver03.jpg" alt="" class="styles__img">
+						</picture>
+					</a>
+					<a style="display: none" href="img/@2x/silver 1+1_gostinaya_16-05-8.RGB_color.0008_1-min.jpg"><img src="img/@1x/silver 1+1_gostinaya_16-05-8.RGB_color.0008_1-min.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/silver 1+1_hall_6_ 03-05.RGB_color.0006_1-min.jpg"><img src="img/@1x/silver 1+1_hall_6_ 03-05.RGB_color.0006_1-min.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/silver 1+1_kitchen_17-05-1.RGB_color.0001_1-min.jpg"><img src="img/@1x/silver 1+1_kitchen_17-05-1.RGB_color.0001_1-min.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/silver 1+1_kitchen_17-05-7.RGB_color.0007_1-min.jpg"><img src="img/@1x/silver 1+1_kitchen_17-05-7.RGB_color.0007_1-min.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/silver 1+1_liv_1_ 30_04.RGB_color.0000_1-min.jpg"><img src="img/@1x/silver 1+1_liv_1_ 30_04.RGB_color.0000_1-min.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/bedr silver fin_1-min.jpg"><img src="img/@1x/bedr silver fin_1-min.jpg" alt="" class="styles__img"></a>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="1200" class="styles-img-wrapper">
 
+					<a data-aos="fade-up" data-aos-duration="1200" class="styles-img-wrapper"
+						data-src="img/@2x/11bronze03.jpg">
+						<picture>
+							<source srcset="img/@1x/11bronze03.jpg" media="(max-width: 600px)">
+							<img src="img/@2x/11bronze03.jpg" alt="" class="styles__img">
+						</picture>
+					</a>
+					<a style="display: none" href="img/@2x/bronze_1+1_hall.RGB_color.0006_1.jpg"><img src="img/@1x/bronze_1+1_hall.RGB_color.0006_1.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/bronze_1+1_kitchen_1.RGB_color_1.jpg"><img src="img/@1x/bronze_1+1_kitchen_1.RGB_color_1.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/bedroom.RGB_color.0004_1.jpg"><img src="img/@1x/bedroom.RGB_color.0004_1.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/living room.RGB_color.0000_1.jpg"><img src="img/@1x/living room.RGB_color.0000_1.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/su_1.RGB_color.0002_1.jpg"><img src="img/@1x/su_1.RGB_color.0002_1.jpg" alt="" class="styles__img"></a>
+					<a style="display: none" href="img/@2x/su_1_1.RGB_color.0003_1.jpg"><img src="img/@1x/su_1_1.RGB_color.0003_1.jpg" alt="" class="styles__img"></a>
+
+				</div>
 			</div>
 			<a href="gallery.html" class="to-gallery__link to-gallery">Фотогалерея</a>
 		</div>
@@ -1320,8 +1393,9 @@
 								<input id="email" name="email" type="text" placeholder="Ваша почта">
 							</div>
 							<button type="submit">Оставить заявку</button>
-							<span class="success">Форма отправлена</span>
-							<span class="fail">Форма не отправлена, попробуйте позже</span>
+							<span class="success">Спасибо, форма успешно отправлена.</span>
+							<span class="fail">Произошла ошибка, попробуйте позже или свяжитесь с нами по
+								телефону</span>
 					</div>
 					</form>
 					<div class="socials">
@@ -1335,7 +1409,7 @@
 			</div>
 			<div class="footer__bottom">
 				<div class="footer__item">
-					<img src="img/@2x/nika_logo.png" alt="" class="footer__item-logo">
+					<img src="img/@2x/logo.svg" alt="" class="footer__item-logo">
 					<p class="footer__item-text">
 						Nika Estate - бутик элитной недвижимости, который специализируется на подборе эксклюзивных
 						объектов топового ценового сегмента, соответствующих самым высоким клиентским запросам!
@@ -1346,10 +1420,10 @@
 					<nav class="footer__nav">
 						<ul class="footer__nav-list">
 							<li class="footer__nav-list-item">
-								<a href="#" class="footer__nav-link">Главная</a>
+								<a href="/" class="footer__nav-link">Главная</a>
 							</li>
 							<li class="footer__nav-list-item">
-								<a href="gallery.html" class="footer__nav-link">Галерея</a>
+								<a href="/gallery" class="footer__nav-link">Галерея фотографий</a>
 							</li>
 							<li class="footer__nav-list-item hide">
 								<a href="" class="footer__nav-link">Проектная документация</a>
@@ -1396,8 +1470,8 @@
 						placeholder="Ваш email...">
 				</div>
 				<button class="popup__btn btn" type="submit">Скачать презентацию</button>
-				<span class="success">Форма отправлена</span>
-				<span class="fail">Форма не отправлена, попробуйте позже</span>
+				<span class="success">Спасибо, форма успешно отправлена.</span>
+				<span class="fail">Произошла ошибка, попробуйте позже или свяжитесь с нами по телефону</span>
 			</form>
 		</div>
 	</div>
@@ -1408,7 +1482,6 @@
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.scrollify.js"></script>
 	<script src="js/lightgallery.min.js"></script>
@@ -1417,7 +1490,6 @@
 	<script src="js/lg-fullscreen.min.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-	<script src="js/bootstrap-formhelpers.min.js"></script>
 	<script src="js/jquery.maskedinput.js"></script>
 	<script src="https://cdn.rawgit.com/digistate/resouces/master/multipleFilterMasonry.js"></script>
 	<script src="js/imagesloaded.pkgd.min.js"></script>

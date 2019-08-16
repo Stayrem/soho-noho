@@ -21,13 +21,15 @@ $email       = $_POST['email'];
 $name        = $_POST['name'];
 $phone       = $_POST['phone'];
 
-$sender = "admin@sohonoho.nikaestate.ru";
-ini_set("SMTP", "mail.hword.ru");
+$sender = "admin@soho-noho.moscow";
+ini_set("SMTP", "mail.soho-noho.moscow");
 ini_set("sendmail_from", $sender);
 
-$headers = "From: ".$sender;
-$message = "Имя: ".$name."\r\nE-mail: ".$email."\r\nТелефон: ".$phone
+$headers = "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/plain; charset=utf-8\r\n";
+$headers .= "From: ".$sender;
+$message = "Имя: ".$name."\r\nE-mail: ".$email."\r\nТелефон: ".$phone;
 // mail($sender, "Новая заявка с сайта Headword", $message, $headers);
-mail('newflat@nikaestate.ru', "Новая заявка с сайта sohonoho", $message, $headers);
+mail('newflat@nikaestate.ru', "Новая заявка с сайта soho-noho.moscow", $message, $headers);
 return send_success();
 ?>
